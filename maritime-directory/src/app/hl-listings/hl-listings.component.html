@@ -1,4 +1,6 @@
-<ng-container *ngIf="(highlights$ | async) as listings; else loading">
+
+<!-- <ng-container *ngIf="(highlights$ | async) as listings; else loading"> -->
+<ng-container *ngIf="highlights as listings; else loading">
 
   <article *ngFor="let listing of listings" class="hl-listing">
     <div class="hl-listing-img-box">

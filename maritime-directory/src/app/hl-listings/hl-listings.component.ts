@@ -4,7 +4,6 @@ import {
   OnInit, 
   ViewEncapsulation 
 } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ListingOverview } from '../mock-highlights';
 
 @Component({
@@ -16,7 +15,9 @@ import { ListingOverview } from '../mock-highlights';
 
 export class HlListingsComponent implements OnInit {
 
-  @Input() highlights$?: Observable<ListingOverview[] | null>;
+  /* @Input() highlights$?: Observable<ListingOverview[] | null>; */
+  
+  @Input() highlights?: ListingOverview[];
 
   constructor() {}
 
