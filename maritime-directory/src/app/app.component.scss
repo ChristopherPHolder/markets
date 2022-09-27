@@ -1,0 +1,7 @@
+app-root {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  min-height: 100vh; 
+  grid-template-rows: auto 0fr 1fr auto; 
+}
