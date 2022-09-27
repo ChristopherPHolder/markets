@@ -3,9 +3,9 @@ import {
   OnInit, 
   ViewEncapsulation 
 } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
 import { ListingOverview } from '../mock-highlights';
-import { ApiService } from '../services/api-service/api.service';
 
 @Component({
   selector: 'app-highlights',
@@ -17,10 +17,14 @@ export class HighlightsComponent implements OnInit {
   highlights$?: Observable<ListingOverview[] | null>;
 
   constructor(
-    private api: ApiService
+    /* private api: ApiService */
+    private activatedRoute: ActivatedRoute
    ) { }
 
-  ngOnInit(): void { 
-    this.highlights$ = this.api.getHighlightListings()
+  ngOnInit(): void {
+    /* this.highlights$ = this.api.getHighlightListings() */
+    this.highlights$ = this.activatedRoute.data.pipe(
+      map(data => data['highlights$'])
+    );
   }
 }
