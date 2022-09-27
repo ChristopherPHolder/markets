@@ -1,7 +1,10 @@
-import { ChangeDetectionStrategy, Component, Inject, Input, OnInit, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { 
+  Component, 
+  Input, 
+  OnInit, 
+  ViewEncapsulation 
+} from '@angular/core';
+import { Observable } from 'rxjs';
 import { ListingOverview } from '../mock-highlights';
 
 @Component({
@@ -12,18 +15,11 @@ import { ListingOverview } from '../mock-highlights';
 })
 
 export class HlListingsComponent implements OnInit {
-  // @Input() highlights$?: Observable<ListingOverview[]>;
-  // @Input() highlights?: ListingOverview[];
-  highlights$?: Observable<ListingOverview[]>;
-  readonly isBrowser: boolean;
 
-  constructor(
-    @Inject(PLATFORM_ID) platformId: object,
-    private activatedRoute: ActivatedRoute,
-  ) {
-    this.isBrowser = isPlatformBrowser(platformId);
-    this.highlights$ = this.activatedRoute.data.pipe(map(data => data['highlights$']));
-  }
+  @Input() highlights$?: Observable<ListingOverview[] | null>;
+
+  constructor() {}
 
   ngOnInit(): void {}
+
 }

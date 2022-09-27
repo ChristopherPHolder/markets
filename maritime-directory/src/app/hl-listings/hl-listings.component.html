@@ -1,9 +1,6 @@
 <ng-container *ngIf="(highlights$ | async) as listings; else loading">
 
-<!-- <ng-container *ngIf="highlights; else loading"> -->
-
   <article *ngFor="let listing of listings" class="hl-listing">
-  <!-- <article *ngFor="let listing of highlights" class="hl-listing"> -->
     <div class="hl-listing-img-box">
       <img [src]="listing.thumbnailUrl" class="hl-listing-img">
     </div>

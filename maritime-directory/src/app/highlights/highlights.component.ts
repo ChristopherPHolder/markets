@@ -1,6 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { 
+  Component, 
+  OnInit, 
+  ViewEncapsulation 
+} from '@angular/core';
+import { Observable } from 'rxjs';
 import { ListingOverview } from '../mock-highlights';
 import { ApiService } from '../services/api-service/api.service';
 
@@ -11,12 +14,13 @@ import { ApiService } from '../services/api-service/api.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class HighlightsComponent implements OnInit {
-  /*   highlights$?: Observable<ListingOverview[]>;  */
+  highlights$?: Observable<ListingOverview[] | null>;
 
-  constructor( ) { }
+  constructor(
+    private api: ApiService
+   ) { }
 
   ngOnInit(): void { 
-    //this.highlights$ = this.api.getHighlightListings()
-    //this.highlights$ = this.activatedRoute.data.pipe(map(data => data['highlights$']));
+    this.highlights$ = this.api.getHighlightListings()
   }
 }
