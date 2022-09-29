@@ -9,7 +9,7 @@ import { ApiService } from './services/api-service/api.service';
 
 function initializeDataFactory(api: ApiService): () => Promise<void> {
   return () => new Promise((resolve) => {
-    api.getHighlightListings().subscribe();
+    api.addPreloadLCPLinks();
     resolve();
   });
 } 
