@@ -16,6 +16,8 @@ export class ApiService {
 
   readonly isBrowser: boolean;
 
+  private imgEndpoint = "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/"
+
   constructor(
     @Inject(PLATFORM_ID) platformId: object,
     private linkService: LinkService,
@@ -32,7 +34,7 @@ export class ApiService {
         this.linkService.addLink({
           rel: 'preload',
           as: 'image',
-          href: listings[i].thumbnailUrl,
+          href: this.imgEndpoint + listings[i].thumbnailUrl,
           fetchpriority: "high"
         })
       }

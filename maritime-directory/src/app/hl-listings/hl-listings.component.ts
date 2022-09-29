@@ -14,6 +14,7 @@ import { ListingOverview } from '../mock-highlights';
 })
 
 export class HlListingsComponent implements OnInit {
+  imgEndpoint = "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/"
 
   /* @Input() highlights$?: Observable<ListingOverview[] | null>; */
   
