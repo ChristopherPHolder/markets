@@ -1,21 +1,20 @@
 
 <!-- <ng-container *ngIf="(highlights$ | async) as listings; else loading"> -->
 <ng-container *ngIf="highlights as listings; else loading">
-
   <article *ngFor="let listing of listings; let i = index" class="hl-listing">
     <div class="hl-listing-img-box">
       <ng-container *ngIf="i < 4; else lazy">
-        <img 
-          [src]="imgEndpoint + listing.thumbnailUrl" 
+        <img
+          [src]="imgEndpoint + listing.thumbnailUrl"
           class="hl-listing-img"
-          fetchpriority="high" 
+          fetchpriority="high"
           loading="eager"
         >
       </ng-container>
       <ng-template #lazy>
-        <img 
-          [src]="imgEndpoint + listing.thumbnailUrl" 
-          class="hl-listing-img" 
+        <img
+          [src]="imgEndpoint + listing.thumbnailUrl"
+          class="hl-listing-img"
           fetchpriority="low"
           loading="lazy"
         >

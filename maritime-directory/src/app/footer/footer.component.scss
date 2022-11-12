@@ -1,10 +1,9 @@
 app-footer {
-  max-width: 1400px;
+  background-color: #d7e5f4 !important;
+  padding-top: 33px;
   display: grid;
   margin: auto;
-  bottom: 0px;
-  color: aliceblue;
-
+  bottom: 0;
   a:hover {
     color: #FFD200;
     cursor: pointer;
@@ -44,7 +43,7 @@ app-footer {
   grid-area: footer-logo;
 }
 
-.footer-reserve { 
+.footer-reserve {
   text-align: center;
   display: grid;
   padding: 15px;
