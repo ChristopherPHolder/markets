@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev:ssr": "ng run maritime-directory:serve-ssr",
+    "dev:ssr": "ng run maritime-directory:serve-ssr & npm run mock:db",
     "serve:ssr": "node dist/maritime-directory/server/main.js",
     "build:ssr": "ng build && ng run maritime-directory:server",
     "prerender": "ng run maritime-directory:prerender",
