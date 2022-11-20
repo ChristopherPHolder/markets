@@ -1,4 +1,4 @@
-export interface ListingOverview {
+export interface ListingPreview {
   id: number;
   url: string;
   thumbnailUrl: string;
