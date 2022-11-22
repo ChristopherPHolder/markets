@@ -1,21 +1,21 @@
 {
-  "name": "listings",
+  "name": "link-service",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/listings/src",
+  "sourceRoot": "libs/link-service/src",
   "projectType": "library",
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/listings/**/*.ts"]
+        "lintFilePatterns": ["libs/link-service/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/listings/jest.config.ts",
+        "jestConfig": "libs/link-service/jest.config.ts",
         "passWithNoTests": true
       }
     }
