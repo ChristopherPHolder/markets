@@ -1,0 +1,13 @@
+markets-header {
+  padding: 25px;
+  display: grid;
+}
+
+#header-logo {
+  height: 55px;
+  width: 154px;
+  @media (max-width: 1000px) {
+    height: 35px;
+    width: 95px;
+  }
+}
