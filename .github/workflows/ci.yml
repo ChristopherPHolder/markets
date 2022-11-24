@@ -23,9 +23,6 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-
       - name: Lint
         run: npm run lint
 
@@ -44,6 +41,9 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
       - name: Lint
         run: npm run lint
 
@@ -58,6 +58,9 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
     
       - name: Test
         run: npm run test
