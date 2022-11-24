@@ -2,7 +2,6 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { UiModule } from '@markets/ui';
 import { ListingsModule } from '@markets/listings';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +15,7 @@ function initializeDataFactory(api: ApiService): () => Promise<void> {
 }
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     UiModule,
