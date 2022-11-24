@@ -73,11 +73,18 @@ export class ApiService {
       selector: response => response.json() 
     }).pipe( 
       shareReplay(),
-      map((listings) => {
-        return listings;
-      })
+      map((listings) => this.mergeImgEndpointInthumbnailUrl(listings))
     );
   }
+
+  private mergeImgEndpointInthumbnailUrl(listings: ListingPreview[]): ListingPreview[] {
+    return listings?.map((listing) => {
+      listing.thumbnailUrl = this.imgEndpoint + listing.thumbnailUrl;
+      return listing;
+    })
+  }
+
+
 
   private addPreloadFetchLink(): void {
     this.linkService.addLink({
