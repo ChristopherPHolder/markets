@@ -1,10 +1,11 @@
 import { PLATFORM_ID, Injectable, Inject } from "@angular/core";
 import { isPlatformBrowser } from '@angular/common';
-import { map, Observable, of, shareReplay, tap } from "rxjs";
-import { fromFetch } from "rxjs/fetch";
-import { LinkService } from "@markets/link-service"
 
-import { environment } from "@markets/shared/environments";
+import { map, Observable, of, shareReplay, tap } from 'rxjs';
+import { fromFetch } from 'rxjs/fetch';
+
+import { LinkService } from '@markets/link-service';
+import { environment } from '@markets/shared/environments';
 
 export interface ListingPreview {
   id: number;
@@ -47,8 +48,8 @@ export class ApiService {
           rel: 'preload',
           as: 'image',
           href: this.imgEndpoint + listings[i].thumbnailUrl,
-          fetchpriority: "high"
-        })
+          fetchpriority: 'high'
+        });
       }
     })).subscribe();
   }
@@ -83,8 +84,6 @@ export class ApiService {
       return listing;
     })
   }
-
-
 
   private addPreloadFetchLink(): void {
     this.linkService.addLink({
