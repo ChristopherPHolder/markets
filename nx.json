@@ -77,16 +77,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "maritime",
-  "projects": {
-    "maritime": {
-      "implicitDependencies": [
-        "api-service", 
-        "link-service",
-        "listings",
-        "shared/environments",
-        "ui"
-      ]
-    }
-  }
+  "defaultProject": "maritime"
 }
