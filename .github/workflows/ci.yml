@@ -2,6 +2,8 @@ name: Markets CI
 
 env:
   NODE_VERSION: 18
+  is-main-branch: ${{ github.ref == 'refs/heads/main' }}
+  is-pull-request: ${{ github.event_name == 'pull_request' }}
 
 on:
   pull_request: {}
@@ -61,6 +63,39 @@ jobs:
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
-    
+
       - name: Test
         run: npm run test
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build Dev
+        run: npm run build:prod
+
+      - name: Deploy Dev
+        if: ${{ env.is-pull-request == 'true' }}
+        run: npm run deploy:dev
+      
+      - name: Deploy Prod
+        if: ${{ env.is-main-branch == 'true' }}
+        run: npm run deploy:prod
