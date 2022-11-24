@@ -97,8 +97,13 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build
+      - name: Build Dev
         run: npm run build:prod
 
-      - name: Deploy
-        run: npm run deploy
+      - name: Deploy Dev
+        if: ${{ env.is-pull-request == 'true' }}
+        run: npm run deploy:dev
+      
+      - name: Deploy Prod
+        if: ${{ env.is-main-branch == 'true' }}
+        run: npm run deploy:prod
