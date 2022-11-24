@@ -7,8 +7,9 @@ import {UiModule} from '@markets/ui';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule, UiModule],
-  providers: [],
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

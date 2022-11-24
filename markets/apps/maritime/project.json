@@ -9,7 +9,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/maritime",
+        "outputPath": "dist/apps/maritime/browser",
         "index": "apps/maritime/src/index.html",
         "main": "apps/maritime/src/main.ts",
         "polyfills": "apps/maritime/src/polyfills.ts",
@@ -86,6 +86,62 @@
         "jestConfig": "apps/maritime/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/apps/apps/maritime/server",
+        "main": "apps/maritime/server.ts",
+        "tsConfig": "apps/maritime/tsconfig.server.json"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "apps/maritime/src/environments/environment.ts",
+              "with": "apps/maritime/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "maritime:build:development",
+          "serverTarget": "maritime:server:development"
+        },
+        "production": {
+          "browserTarget": "maritime:build:production",
+          "serverTarget": "maritime:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "maritime:build:development",
+          "serverTarget": "maritime:server:development"
+        },
+        "production": {
+          "browserTarget": "maritime:build:production",
+          "serverTarget": "maritime:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   },
   "tags": []
