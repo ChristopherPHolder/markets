@@ -92,4 +92,4 @@ jobs:
 
       - name: Deploy
         if: success()
-        run: aws s3 sync ./dist/maritime s3://marketsappdev
+        run: aws s3 sync ./dist/apps/maritime s3://marketsappdev
