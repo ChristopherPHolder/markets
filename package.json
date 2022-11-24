@@ -16,7 +16,7 @@
     "affected:test": "nx affected:test",
     "affected:lint": "nx affected:lint",
     "deploy:dev": "aws s3 sync ./dist/apps/maritime/browser s3://marketsappdev --delete",
-    "deploy:prod": "aws s3 sync ./dist/apps/maritime/browser s3://marketsappdev --delete"
+    "deploy:prod": "aws s3 sync ./dist/apps/maritime/browser s3://marketsappprod --delete"
   },
   "private": true,
   "dependencies": {
