@@ -4,6 +4,8 @@ import { map, Observable, of, shareReplay, tap } from "rxjs";
 import { fromFetch } from "rxjs/fetch";
 import { LinkService } from "@markets/link-service"
 
+import { environment } from "@markets/shared/environments";
+
 export interface ListingPreview {
   id: number;
   url: string;
@@ -20,13 +22,13 @@ export interface ListingPreview {
 @Injectable()
 export class ApiService {
 
-  private endpoint = "http://localhost:3333/api";
-
+  private readonly apiEndpoint = environment.apiEndpoint;
+  private readonly imgEndpoint = environment.imgEndpoint;
   private highlights$?:  Observable<ListingPreview[]>;
 
   readonly isBrowser: boolean;
 
-  private imgEndpoint = "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/"
+  
 
   constructor(
     @Inject(PLATFORM_ID) platformId: object,
@@ -67,7 +69,7 @@ export class ApiService {
   }
 
   private fetchHighlights(): Observable<ListingPreview[]> {
-    return fromFetch<ListingPreview[]>(this.endpoint, { 
+    return fromFetch<ListingPreview[]>(this.apiEndpoint, { 
       selector: response => response.json() 
     }).pipe( 
       shareReplay(),
@@ -82,7 +84,7 @@ export class ApiService {
       rel: 'preload',
       as: 'fetch',
       type: 'application/json',
-      href: this.endpoint,
+      href: this.apiEndpoint,
       crossorigin: ''
     });
   }
