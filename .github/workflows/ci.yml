@@ -65,7 +65,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
+        uses: nrwl/nx-set-shas@v3
       
       - name: 'Merge: Test all projects'
         if: ${{ env.is-main-branch == 'true' }}
