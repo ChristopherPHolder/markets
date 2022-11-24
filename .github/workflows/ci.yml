@@ -91,5 +91,4 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        if: success()
         run: aws s3 sync ./dist/apps/maritime s3://marketsappdev
