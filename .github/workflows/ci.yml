@@ -1,5 +1,8 @@
 name: Markets CI
 
+env:
+  NODE_VERSION: 18
+
 on:
   pull_request: {}
   workflow_dispatch: {}
@@ -17,7 +20,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Install dependencies
@@ -25,9 +28,36 @@ jobs:
 
       - name: Lint
         run: npm run lint
-      
-      - name: Test
-        run: npm run test
 
       - name: Build
         run: npm run build
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Lint
+        run: npm run lint
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+    
+      - name: Test
+        run: npm run test
