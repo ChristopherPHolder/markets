@@ -1,22 +1,11 @@
-import { Injectable, NgModule } from '@angular/core';
-import {  Resolve, RouterModule, Routes } from '@angular/router';
-import { Observable } from 'rxjs';
-import { ListingPreview } from '@markets/api-service';
-import { ApiService } from '@markets/api-service';
-
-@Injectable({providedIn: 'root'})
-export class HighlightsResolver implements Resolve<ListingPreview[] | null> {
-  constructor(private apiService: ApiService) {}
-  resolve(): Observable<ListingPreview[] | null> {
-    return this.apiService.getHighlightListings();
-  }
-}
+import { NgModule } from '@angular/core';
+import {  RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '', 
-    resolve: { highlights$: HighlightsResolver },
-    loadChildren: () => import('@markets/listings').then(m => m.ListingsModule) 
+    loadChildren: () => 
+      import('@markets/listings').then(m => m.ListingsModule) 
   },
 ];
 
