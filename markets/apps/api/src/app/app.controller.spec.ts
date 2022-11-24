@@ -3,6 +3,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
+import { ListingPreview } from '@markets/api-service';
+import * as _listing from '../assets/mock-data.json';
+
 describe('AppController', () => {
   let app: TestingModule;
 
@@ -13,10 +16,11 @@ describe('AppController', () => {
     }).compile();
   });
 
-  describe('getData', () => {
-    it('should return "Welcome to api!"', () => {
+  describe('getListingPreviews', () => {
+    it('should return Mocked listings', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({ message: 'Welcome to api!' });
+      const mockListingPreviews: ListingPreview[] = _listing.previews;
+      expect(appController.getListingPreviews()).toEqual(mockListingPreviews);
     });
   });
 });
