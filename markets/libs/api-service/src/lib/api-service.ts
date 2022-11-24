@@ -17,11 +17,10 @@ export interface ListingPreview {
   description?: string;
 }
 
-
 @Injectable()
 export class ApiService {
 
-  private endpoint = "http://localhost:3000/highlightListings";
+  private endpoint = "http://localhost:3333/api";
 
   private highlights$?:  Observable<ListingPreview[]>;
 
@@ -60,6 +59,10 @@ export class ApiService {
     if (!this.highlights$) {
       this.highlights$ = this.fetchHighlights();
     }
+    console.log('t', this.highlights$?.subscribe((d) => {
+      console.log(d);
+      return d;
+    }));
     return  this.highlights$;
   }
 
