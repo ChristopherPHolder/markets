@@ -8,7 +8,7 @@
     "build": "nx build",
     "build:prod": "npm run prerender && npm run compress",
     "prerender": "npx nx run maritime:prerender --configuration=production",
-    "compress": "gzipper compress ./dist/apps/maritime/browser",
+    "compress": "gzipper compress ./dist/apps/maritime/browser --gzip --brotli",
     "test": "nx test",
     "lint": "nx lint",
     "postinstall": "node ./decorate-angular-cli.js",
