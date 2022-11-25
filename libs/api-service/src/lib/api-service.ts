@@ -24,12 +24,10 @@ export interface ListingPreview {
 export class ApiService {
 
   private readonly apiEndpoint = environment.apiEndpoint;
-  private readonly imgEndpoint = environment.imgEndpoint;
+
   private highlights$?:  Observable<ListingPreview[]>;
 
   readonly isBrowser: boolean;
-
-  
 
   constructor(
     @Inject(PLATFORM_ID) platformId: object,
@@ -47,7 +45,7 @@ export class ApiService {
         this.linkService.addLink({
           rel: 'preload',
           as: 'image',
-          href: this.imgEndpoint + listings[i].thumbnailUrl,
+          href: listings[i].thumbnailUrl,
           fetchpriority: 'high'
         });
       }
@@ -62,28 +60,18 @@ export class ApiService {
     if (!this.highlights$) {
       this.highlights$ = this.fetchHighlights();
     }
-    console.log('t', this.highlights$?.subscribe((d) => {
-      console.log(d);
-      return d;
-    }));
     return  this.highlights$;
   }
 
   private fetchHighlights(): Observable<ListingPreview[]> {
-    return fromFetch<ListingPreview[]>(this.apiEndpoint, { 
+    return fromFetch<{previews: ListingPreview[]}>(this.apiEndpoint, { 
       selector: response => response.json() 
     }).pipe( 
       shareReplay(),
-      map((listings) => this.mergeImgEndpointInthumbnailUrl(listings))
+      map(response => response.previews),
     );
   }
 
-  private mergeImgEndpointInthumbnailUrl(listings: ListingPreview[]): ListingPreview[] {
-    return listings?.map((listing) => {
-      listing.thumbnailUrl = this.imgEndpoint + listing.thumbnailUrl;
-      return listing;
-    })
-  }
 
   private addPreloadFetchLink(): void {
     this.linkService.addLink({
