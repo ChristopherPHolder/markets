@@ -35,8 +35,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/maritime/src/environments/environment.ts",
-              "with": "apps/maritime/src/environments/environment.prod.ts"
+              "replace": "libs/shared/environments/src/lib/environment.ts",
+              "with": "libs/shared/environments/src/lib/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -99,8 +99,8 @@
           "outputHashing": "media",
           "fileReplacements": [
             {
-              "replace": "apps/maritime/src/environments/environment.ts",
-              "with": "apps/maritime/src/environments/environment.prod.ts"
+              "replace": "libs/shared/environments/src/lib/environment.ts",
+              "with": "libs/shared/environments/src/lib/environment.prod.ts"
             }
           ]
         },

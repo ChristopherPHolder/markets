@@ -9,7 +9,6 @@ import { ListingPreview } from '@markets/api-service';
 })
 
 export class HlListingsComponent  {
-  imgEndpoint = "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/"
   
   @Input() highlights?: ListingPreview[];
 

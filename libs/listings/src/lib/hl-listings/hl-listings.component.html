@@ -3,7 +3,7 @@
     <div class="hl-listing-img-box">
       <ng-container *ngIf="i < 4; else lazy">
         <img
-          [src]="imgEndpoint + listing.thumbnailUrl"
+          [src]="listing.thumbnailUrl"
           class="hl-listing-img"
           fetchpriority="high"
           loading="eager"
@@ -11,7 +11,7 @@
       </ng-container>
       <ng-template #lazy>
         <img
-          [src]="imgEndpoint + listing.thumbnailUrl"
+          [src]="listing.thumbnailUrl"
           class="hl-listing-img"
           fetchpriority="low"
           loading="lazy"

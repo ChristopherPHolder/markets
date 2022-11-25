@@ -4,9 +4,9 @@ import * as _listing from '../assets/mock-data.json';
 
 @Injectable()
 export class AppService {
-  private listingPreviews: ListingPreview[] = _listing.previews;
+  private listingPreviews: {previews: ListingPreview[]} = _listing;
 
-  getListingPreviews(): ListingPreview[] {
+  getListingPreviews(): {previews: ListingPreview[]} {
     return this.listingPreviews;
   }
 }

@@ -1,8 +1,11 @@
 import { PLATFORM_ID, Injectable, Inject } from "@angular/core";
 import { isPlatformBrowser } from '@angular/common';
-import { map, Observable, of, shareReplay, tap } from "rxjs";
-import { fromFetch } from "rxjs/fetch";
-import { LinkService } from "@markets/link-service"
+
+import { map, Observable, of, shareReplay, tap } from 'rxjs';
+import { fromFetch } from 'rxjs/fetch';
+
+import { LinkService } from '@markets/link-service';
+import { environment } from '@markets/shared/environments';
 
 export interface ListingPreview {
   id: number;
@@ -20,13 +23,11 @@ export interface ListingPreview {
 @Injectable()
 export class ApiService {
 
-  private endpoint = "http://localhost:3333/api";
+  private readonly apiEndpoint = environment.apiEndpoint;
 
   private highlights$?:  Observable<ListingPreview[]>;
 
   readonly isBrowser: boolean;
-
-  private imgEndpoint = "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/"
 
   constructor(
     @Inject(PLATFORM_ID) platformId: object,
@@ -44,9 +45,9 @@ export class ApiService {
         this.linkService.addLink({
           rel: 'preload',
           as: 'image',
-          href: this.imgEndpoint + listings[i].thumbnailUrl,
-          fetchpriority: "high"
-        })
+          href: listings[i].thumbnailUrl,
+          fetchpriority: 'high'
+        });
       }
     })).subscribe();
   }
@@ -59,30 +60,25 @@ export class ApiService {
     if (!this.highlights$) {
       this.highlights$ = this.fetchHighlights();
     }
-    console.log('t', this.highlights$?.subscribe((d) => {
-      console.log(d);
-      return d;
-    }));
     return  this.highlights$;
   }
 
   private fetchHighlights(): Observable<ListingPreview[]> {
-    return fromFetch<ListingPreview[]>(this.endpoint, { 
+    return fromFetch<{previews: ListingPreview[]}>(this.apiEndpoint, { 
       selector: response => response.json() 
     }).pipe( 
       shareReplay(),
-      map((listings) => {
-        return listings;
-      })
+      map(response => response.previews),
     );
   }
+
 
   private addPreloadFetchLink(): void {
     this.linkService.addLink({
       rel: 'preload',
       as: 'fetch',
       type: 'application/json',
-      href: this.endpoint,
+      href: this.apiEndpoint,
       crossorigin: ''
     });
   }
