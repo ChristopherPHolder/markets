@@ -1,76 +1,75 @@
-{
-  "previews": [
-    {
-      "id": 645,
-      "type": "product",
-      "condition": "Nuevo",
-      "url": "https://mexicomarino.com/producto/detalle/pack-gpsmap-1222xsv-plus-645",
-      "thumbnailUrl": "https://mexicomarino.com/img/articulo/645/thumbnail-mexico_marino-bd693bf8.jpg",
-      "price": "$95,545 MXN",
-      "description": "Pack GPSMAP® 1222xsv Plus"
-    },
-    {
-      "id": 648,
-      "type": "product",
-      "condition": "Nuevo",
-      "url": "https://mexicomarino.com/producto/detalle/echomap-uhd-92sv-648",
-      "thumbnailUrl": "https://mexicomarino.com/img/articulo/648/thumbnail-mexico_marino-005a2e9c.jpg",
-      "price": "$54,442 MXN",
-      "description": "ECHOMAP UHD 92sv"
-    },
-    {
-      "id": 642,
-      "type": "product",
-      "condition": "Nuevo",
-      "url": "https://mexicomarino.com/producto/detalle/sonda-striker-4cv-642",
-      "thumbnailUrl": "https://mexicomarino.com/img/articulo/642/thumbnail-mexico_marino-65f520e4.jpg",
-      "price": "$4,999 MXN",
-      "description": "Sonda Striker 4cv"
-    },
-    {
-      "id": 646,
-      "type": "product",
-      "condition": "Nuevo",
-      "url": "https://mexicomarino.com/producto/detalle/gpsmap-79s-646",
-      "thumbnailUrl": "https://mexicomarino.com/img/articulo/646/thumbnail-mexico_marino-4f5c866a.jpg",
-      "price": "$7,999 MXN",
-      "description": "Gpsmap 79s"
-    },
-    {
-      "id": 649,
-      "type": "product",
-      "condition": "Nuevo",
-      "url": "https://mexicomarino.com/producto/detalle/gps-73-garmin-649",
-      "thumbnailUrl": "https://mexicomarino.com/img/articulo/649/thumbnail-mexico_marino-78a27204.jpg",
-      "price": "$3,859 MXN",
-      "description": "GPS 73 Garmin"
-    },
-    {
-      "id": 647,
-      "type": "product",
-      "condition": "Nuevo",
-      "url": "https://mexicomarino.com/producto/detalle/fusion-apollo-wb670-647",
-      "thumbnailUrl": "https://mexicomarino.com/img/articulo/647/thumbnail-mexico_marino-541a37e4.jpg",
-      "price": "$9,758 MXN",
-      "description": "Fusion Apollo WB670"
-    },
-    {
-      "id": 643,
-      "type": "product",
-      "condition": "Nuevo",
-      "url": "https://mexicomarino.com/producto/detalle/radar-de-antena-cerrada-gmr-fantom-643",
-      "thumbnailUrl": "https://mexicomarino.com/img/articulo/643/thumbnail-mexico_marino-f58f770a.jpg",
-      "price": "$55,598 MXN",
-      "description": "Radar de antena cerrada GMR Fantom"
-    },
-    {
-      "id": 644,
-      "type": "product",
-      "condition": "Nuevo",
-      "url": "https://mexicomarino.com/producto/detalle/gpsmap-79sc-644",
-      "thumbnailUrl": "https://mexicomarino.com/img/articulo/644/thumbnail-mexico_marino-4dd5e2b8.jpg",
-      "price": "$7,999 MXN",
-      "description": "Gpsmap 79sc"
-    }
-  ]
-}
+[
+  {
+    "id": 645,
+    "type": "product",
+    "condition": "Nuevo",
+    "url": "https://mexicomarino.com/producto/detalle/pack-gpsmap-1222xsv-plus-645",
+    "thumbnailUrl": "https://mexicomarino.com/img/articulo/645/thumbnail-mexico_marino-bd693bf8.jpg",
+    "price": "$95,545 MXN",
+    "description": "Pack GPSMAP® 1222xsv Plus"
+  },
+  {
+    "id": 648,
+    "type": "product",
+    "condition": "Nuevo",
+    "url": "https://mexicomarino.com/producto/detalle/echomap-uhd-92sv-648",
+    "thumbnailUrl": "https://mexicomarino.com/img/articulo/648/thumbnail-mexico_marino-005a2e9c.jpg",
+    "price": "$54,442 MXN",
+    "description": "ECHOMAP UHD 92sv"
+  },
+  {
+    "id": 642,
+    "type": "product",
+    "condition": "Nuevo",
+    "url": "https://mexicomarino.com/producto/detalle/sonda-striker-4cv-642",
+    "thumbnailUrl": "https://mexicomarino.com/img/articulo/642/thumbnail-mexico_marino-65f520e4.jpg",
+    "price": "$4,999 MXN",
+    "description": "Sonda Striker 4cv"
+  },
+  {
+    "id": 646,
+    "type": "product",
+    "condition": "Nuevo",
+    "url": "https://mexicomarino.com/producto/detalle/gpsmap-79s-646",
+    "thumbnailUrl": "https://mexicomarino.com/img/articulo/646/thumbnail-mexico_marino-4f5c866a.jpg",
+    "price": "$7,999 MXN",
+    "description": "Gpsmap 79s"
+  },
+  {
+    "id": 649,
+    "type": "product",
+    "condition": "Nuevo",
+    "url": "https://mexicomarino.com/producto/detalle/gps-73-garmin-649",
+    "thumbnailUrl": "https://mexicomarino.com/img/articulo/649/thumbnail-mexico_marino-78a27204.jpg",
+    "price": "$3,859 MXN",
+    "description": "GPS 73 Garmin"
+  },
+  {
+    "id": 647,
+    "type": "product",
+    "condition": "Nuevo",
+    "url": "https://mexicomarino.com/producto/detalle/fusion-apollo-wb670-647",
+    "thumbnailUrl": "https://mexicomarino.com/img/articulo/647/thumbnail-mexico_marino-541a37e4.jpg",
+    "price": "$9,758 MXN",
+    "description": "Fusion Apollo WB670"
+  },
+  {
+    "id": 643,
+    "type": "product",
+    "condition": "Nuevo",
+    "url": "https://mexicomarino.com/producto/detalle/radar-de-antena-cerrada-gmr-fantom-643",
+    "thumbnailUrl": "https://mexicomarino.com/img/articulo/643/thumbnail-mexico_marino-f58f770a.jpg",
+    "price": "$55,598 MXN",
+    "description": "Radar de antena cerrada GMR Fantom"
+  },
+  {
+    "id": 644,
+    "type": "product",
+    "condition": "Nuevo",
+    "url": "https://mexicomarino.com/producto/detalle/gpsmap-79sc-644",
+    "thumbnailUrl": "https://mexicomarino.com/img/articulo/644/thumbnail-mexico_marino-4dd5e2b8.jpg",
+    "price": "$7,999 MXN",
+    "description": "Gpsmap 79sc"
+  }
+]
+
