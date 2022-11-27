@@ -4,4 +4,4 @@
 
 <h2 class="highlights-title">DESTACADOS</h2>
 
-<markets-hl-listings [highlights]="undefined"></markets-hl-listings>
+<markets-hl-listings [highlights]="(highlights$ | async) ?? undefined"></markets-hl-listings>
