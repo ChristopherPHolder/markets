@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { ListingPreview } from '@markets/api-service';
-import * as _listing from '../assets/mock-data.json';
+import * as _listing from '../assets/previews-watercraft.json';
 
 describe('AppController', () => {
   let app: TestingModule;
