@@ -8,12 +8,6 @@ import { ListingPreview } from '@markets/api-service';
   encapsulation: ViewEncapsulation.None,
 })
 
-export class HlListingsComponent  {
-  
+export class HlListingsComponent {
   @Input() highlights?: ListingPreview[];
-
-  constructor() {
-    console.log(this.highlights)
-  }
-
 }

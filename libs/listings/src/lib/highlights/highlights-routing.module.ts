@@ -1,7 +1,7 @@
 import { Injectable, NgModule } from '@angular/core';
 import {  Resolve, RouterModule, Routes } from '@angular/router';
 
-import { ListingPreview } from '@markets/api-service';
+import { HighlightListingsPreviews } from '@markets/api-service';
 import { ApiService } from '@markets/api-service';
 
 import { HighlightsComponent } from './highlights.component';
@@ -9,20 +9,19 @@ import { HighlightsComponent } from './highlights.component';
 import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
-export class HighlightsResolver implements Resolve<ListingPreview[] | null> {
+export class HighlightsResolver implements Resolve<HighlightListingsPreviews | null> {
   constructor(private apiService: ApiService) {}
-  resolve(): Observable<ListingPreview[] | null> {
+  resolve(): Observable<HighlightListingsPreviews | null> {
     return this.apiService.getHighlightListings();
   }
 }
 
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: HighlightsComponent,
     resolve: { highlights$: HighlightsResolver },
   },
-
 ];
 
 @NgModule({

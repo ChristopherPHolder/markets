@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { ListingPreview } from '@markets/api-service';
-import * as _listing from '../assets/mock-data.json';
+import { HighlightListingsPreviews } from '@markets/api-service';
+import * as _highlightListings from '../assets/mock-data.json';
 
 @Injectable()
 export class AppService {
-  private listingPreviews: {previews: ListingPreview[]} = _listing;
+  private highlightListings: HighlightListingsPreviews = _highlightListings;
 
-  getListingPreviews(): {previews: ListingPreview[]} {
-    return this.listingPreviews;
+  getHighlightListings(): HighlightListingsPreviews {
+    return this.highlightListings;
   }
 }

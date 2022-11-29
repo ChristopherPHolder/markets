@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getListingPreviews() {
-    return this.appService.getListingPreviews();
+  getHighlightListings() {
+    return this.appService.getHighlightListings();
   }
 }
