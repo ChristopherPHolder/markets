@@ -10,3 +10,9 @@ export interface ListingPreview {
   year?: number;
   description?: string;
 }
+
+export interface HighlightListingsPreviews {
+  watercrafts: ListingPreview[];
+  products: ListingPreview[];
+  services: ListingPreview[];
+}
