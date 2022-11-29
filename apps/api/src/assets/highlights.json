@@ -1,0 +1,368 @@
+{
+  "watercrafts": [
+    {
+      "id": 752,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-regal-24-pies-ano-2017-en-venta-en-san-luis-potosi-752",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-2e58cc05.webp",
+      "category": "Lancha",
+      "year": 2017,
+      "price": "$ 1,500,000 MXN",
+      "description": "Lancha Regal 24 pies año 2017 en venta en San Luis Potosí"
+    },
+    {
+      "id": 698,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-inmensa-de-23-pies-con-motor-2015-en-venta-en-acapulco-guerrero-698",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-64de1a3a.webp",
+      "category": "Lancha",
+      "price": "$150,000 MXN",
+      "description": "Lancha Inmensa de 23 pies con motor 2015 en venta en Acapulco, Guerrero"
+    },
+    {
+      "id": 768,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/grady-white-en-venta-2002-en-yucatan-768",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-590f956b.webp",
+      "category": "Lancha",
+      "year": 2002,
+      "price": "$ 120,000 USD",
+      "description": "Grady white en venta 2002 en Yucatán"
+    },
+    {
+      "id": 733,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-cajun-ano-1996-de-21-pies-en-venta-en-monclova-coahuila-733",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-0c7ea15c.webp",
+      "category": "Lancha",
+      "year": 1996,
+      "price": "$220,000 MXN",
+      "description": "Lancha Cajun año 1996 de 21 pies en venta en Monclova, Coahuila"
+    },
+    {
+      "id": 726,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-pro-craft-210-ano-2005-de-21-pies-en-venta-en-ciudad-de-allende-nuevo-leon-726",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-51179f73.webp",
+      "category": "Lancha",
+      "year": 2005,
+      "price": "$400,000 MXN",
+      "description": "Lancha Pro Craft 210 año 2005 de 21 pies en venta en Ciudad de Allende, Nuevo León"
+    },
+    {
+      "id": 749,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/yate-larson-274-cabrio-ano-2010-en-venta-en-puerto-vallarta-jalisco-749",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-802eda76.webp",
+      "category": "Yate",
+      "year": 2010,
+      "price": "$78,000 USD",
+      "description": "Yate Larson 274 Cabrio año 2010 en venta en Puerto Vallarta, Jalisco"
+    },
+    {
+      "id": 701,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/yate-formula-ano-2005-de-41-pies-en-venta-en-progreso-yucatan-701",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-79d8cfc2.webp",
+      "category": "Yate",
+      "price": "$65,000 USD",
+      "description": "Yate Fórmula año 2005 de 41 pies en venta en Progreso, Yucatán"
+    },
+    {
+      "id": 770,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/sea-ray-290-sdx-2018-770",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-77f10cf7.webp",
+      "category": "Lancha",
+      "year": 2018,
+      "price": "$110,000 USD",
+      "description": "SEA RAY 290 SDX 2018"
+    },
+    {
+      "id": 757,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-marca-baja-modelo-ea-342-performance-ano-2004-en-venta-en-merida-yucatan-757",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-81e3ed3d.webp",
+      "category": "Lancha",
+      "year": 2004,
+      "price": "$880,000 MXN",
+      "description": "Lancha marca Baja Modelo ea 342 performance año 2004 en venta en Mérida, Yucatán"
+    },
+    {
+      "id": 745,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-glaston-ano-2006-de-17-pies-en-venta-en-boca-del-rio-veracruz-745",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-c54bff83.webp",
+      "category": "Lancha",
+      "year": 2006,
+      "price": "$350,000 MXN",
+      "description": "Lancha Glaston año 2006 de 17 pies en venta en Boca del Río, Veracruz"
+    },
+    {
+      "id": 752,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-regal-24-pies-ano-2017-en-venta-en-san-luis-potosi-752",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-2e58cc05.webp",
+      "category": "Lancha",
+      "year": 2017,
+      "price": "$ 1,500,000 MXN",
+      "description": "Lancha Regal 24 pies año 2017 en venta en San Luis Potosí"
+    },
+    {
+      "id": 698,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-inmensa-de-23-pies-con-motor-2015-en-venta-en-acapulco-guerrero-698",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-64de1a3a.webp",
+      "category": "Lancha",
+      "price": "$150,000 MXN",
+      "description": "Lancha Inmensa de 23 pies con motor 2015 en venta en Acapulco, Guerrero"
+    },
+    {
+      "id": 768,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/grady-white-en-venta-2002-en-yucatan-768",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-590f956b.webp",
+      "category": "Lancha",
+      "year": 2002,
+      "price": "$ 120,000 USD",
+      "description": "Grady white en venta 2002 en Yucatán"
+    },
+    {
+      "id": 733,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-cajun-ano-1996-de-21-pies-en-venta-en-monclova-coahuila-733",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-0c7ea15c.webp",
+      "category": "Lancha",
+      "year": 1996,
+      "price": "$220,000 MXN",
+      "description": "Lancha Cajun año 1996 de 21 pies en venta en Monclova, Coahuila"
+    },
+    {
+      "id": 726,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-pro-craft-210-ano-2005-de-21-pies-en-venta-en-ciudad-de-allende-nuevo-leon-726",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-51179f73.webp",
+      "category": "Lancha",
+      "year": 2005,
+      "price": "$400,000 MXN",
+      "description": "Lancha Pro Craft 210 año 2005 de 21 pies en venta en Ciudad de Allende, Nuevo León"
+    },
+    {
+      "id": 749,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/yate-larson-274-cabrio-ano-2010-en-venta-en-puerto-vallarta-jalisco-749",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-802eda76.webp",
+      "category": "Yate",
+      "year": 2010,
+      "price": "$78,000 USD",
+      "description": "Yate Larson 274 Cabrio año 2010 en venta en Puerto Vallarta, Jalisco"
+    },
+    {
+      "id": 701,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/yate-formula-ano-2005-de-41-pies-en-venta-en-progreso-yucatan-701",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-79d8cfc2.webp",
+      "category": "Yate",
+      "price": "$65,000 USD",
+      "description": "Yate Fórmula año 2005 de 41 pies en venta en Progreso, Yucatán"
+    },
+    {
+      "id": 770,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/sea-ray-290-sdx-2018-770",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-77f10cf7.webp",
+      "category": "Lancha",
+      "year": 2018,
+      "price": "$110,000 USD",
+      "description": "SEA RAY 290 SDX 2018"
+    },
+    {
+      "id": 757,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-marca-baja-modelo-ea-342-performance-ano-2004-en-venta-en-merida-yucatan-757",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-81e3ed3d.webp",
+      "category": "Lancha",
+      "year": 2004,
+      "price": "$880,000 MXN",
+      "description": "Lancha marca Baja Modelo ea 342 performance año 2004 en venta en Mérida, Yucatán"
+    },
+    {
+      "id": 745,
+      "type": "watercraft",
+      "condition": "Seminuevo",
+      "url": "https://mexicomarino.com/detalle/lancha-glaston-ano-2006-de-17-pies-en-venta-en-boca-del-rio-veracruz-745",
+      "thumbnailUrl": "https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/v3/thumbnail-mexico_marino-c54bff83.webp",
+      "category": "Lancha",
+      "year": 2006,
+      "price": "$350,000 MXN",
+      "description": "Lancha Glaston año 2006 de 17 pies en venta en Boca del Río, Veracruz"
+    }
+  ],
+  "products": [
+    {
+      "id": 645,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/pack-gpsmap-1222xsv-plus-645",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/645/thumbnail-mexico_marino-bd693bf8.jpg",
+      "price": "$95,545 MXN",
+      "description": "Pack GPSMAP® 1222xsv Plus"
+    },
+    {
+      "id": 648,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/echomap-uhd-92sv-648",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/648/thumbnail-mexico_marino-005a2e9c.jpg",
+      "price": "$54,442 MXN",
+      "description": "ECHOMAP UHD 92sv"
+    },
+    {
+      "id": 642,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/sonda-striker-4cv-642",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/642/thumbnail-mexico_marino-65f520e4.jpg",
+      "price": "$4,999 MXN",
+      "description": "Sonda Striker 4cv"
+    },
+    {
+      "id": 646,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/gpsmap-79s-646",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/646/thumbnail-mexico_marino-4f5c866a.jpg",
+      "price": "$7,999 MXN",
+      "description": "Gpsmap 79s"
+    },
+    {
+      "id": 649,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/gps-73-garmin-649",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/649/thumbnail-mexico_marino-78a27204.jpg",
+      "price": "$3,859 MXN",
+      "description": "GPS 73 Garmin"
+    },
+    {
+      "id": 647,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/fusion-apollo-wb670-647",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/647/thumbnail-mexico_marino-541a37e4.jpg",
+      "price": "$9,758 MXN",
+      "description": "Fusion Apollo WB670"
+    },
+    {
+      "id": 643,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/radar-de-antena-cerrada-gmr-fantom-643",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/643/thumbnail-mexico_marino-f58f770a.jpg",
+      "price": "$55,598 MXN",
+      "description": "Radar de antena cerrada GMR Fantom"
+    },
+    {
+      "id": 644,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/gpsmap-79sc-644",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/644/thumbnail-mexico_marino-4dd5e2b8.jpg",
+      "price": "$7,999 MXN",
+      "description": "Gpsmap 79sc"
+    }
+  ],
+  "services": [
+    {
+      "id": 645,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/pack-gpsmap-1222xsv-plus-645",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/645/thumbnail-mexico_marino-bd693bf8.jpg",
+      "price": "$95,545 MXN",
+      "description": "Pack GPSMAP® 1222xsv Plus"
+    },
+    {
+      "id": 648,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/echomap-uhd-92sv-648",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/648/thumbnail-mexico_marino-005a2e9c.jpg",
+      "price": "$54,442 MXN",
+      "description": "ECHOMAP UHD 92sv"
+    },
+    {
+      "id": 642,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/sonda-striker-4cv-642",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/642/thumbnail-mexico_marino-65f520e4.jpg",
+      "price": "$4,999 MXN",
+      "description": "Sonda Striker 4cv"
+    },
+    {
+      "id": 646,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/gpsmap-79s-646",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/646/thumbnail-mexico_marino-4f5c866a.jpg",
+      "price": "$7,999 MXN",
+      "description": "Gpsmap 79s"
+    },
+    {
+      "id": 649,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/gps-73-garmin-649",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/649/thumbnail-mexico_marino-78a27204.jpg",
+      "price": "$3,859 MXN",
+      "description": "GPS 73 Garmin"
+    },
+    {
+      "id": 647,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/fusion-apollo-wb670-647",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/647/thumbnail-mexico_marino-541a37e4.jpg",
+      "price": "$9,758 MXN",
+      "description": "Fusion Apollo WB670"
+    },
+    {
+      "id": 643,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/radar-de-antena-cerrada-gmr-fantom-643",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/643/thumbnail-mexico_marino-f58f770a.jpg",
+      "price": "$55,598 MXN",
+      "description": "Radar de antena cerrada GMR Fantom"
+    },
+    {
+      "id": 644,
+      "type": "product",
+      "condition": "Nuevo",
+      "url": "https://mexicomarino.com/producto/detalle/gpsmap-79sc-644",
+      "thumbnailUrl": "https://mexicomarino.com/img/articulo/644/thumbnail-mexico_marino-4dd5e2b8.jpg",
+      "price": "$7,999 MXN",
+      "description": "Gpsmap 79sc"
+    }
+  ]
+}

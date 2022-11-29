@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { ListingPreview } from '@markets/api-service';
+import { HighlightListingsPreviews } from '@markets/api-service';
 
 @Component({
   selector: 'markets-highlights',
@@ -10,7 +10,7 @@ import { ListingPreview } from '@markets/api-service';
   encapsulation: ViewEncapsulation.None,
 })
 export class HighlightsComponent {
-  public readonly highlights$?: Observable<ListingPreview[] | null>;
+  public readonly highlights$?: Observable<HighlightListingsPreviews | null>;
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.highlights$ = this.activatedRoute.data

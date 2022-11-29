@@ -2,6 +2,14 @@
   Descubre tu próxima embarcación, anuncia tus productos y servicios marinos
 </h1>
 
-<h2 class="highlights-title">DESTACADOS</h2>
+<h2 class="highlights-title">EMBARCACIONES</h2>
 
-<markets-hl-listings [highlights]="(highlights$ | async) ?? undefined"></markets-hl-listings>
+<markets-hl-listings [highlights]="(highlights$ | async)?.watercrafts ?? undefined"></markets-hl-listings>
+
+<h2 class="highlights-title">PRODUCTOS</h2>
+
+<markets-hl-listings [highlights]="(highlights$ | async)?.products ?? undefined"></markets-hl-listings>
+
+<h2 class="highlights-title">SERVICIOS</h2>
+
+<markets-hl-listings [highlights]="(highlights$ | async)?.products ?? undefined"></markets-hl-listings>

@@ -7,7 +7,7 @@ import { fromFetch } from 'rxjs/fetch';
 import { LinkService } from '@markets/link-service';
 import { environment } from '@markets/shared/environments';
 
-import {ListingPreview} from "./types";
+import { HighlightListingsPreviews } from "./types";
 
 
 @Injectable()
@@ -15,7 +15,7 @@ export class ApiService {
 
   private readonly apiEndpoint = environment.apiEndpoint;
 
-  private highlights$?:  Observable<ListingPreview[]>;
+  private highlights$?:  Observable<HighlightListingsPreviews>;
 
   readonly isBrowser: boolean;
 
@@ -35,14 +35,14 @@ export class ApiService {
         this.linkService.addLink({
           rel: 'preload',
           as: 'image',
-          href: listings[i].thumbnailUrl,
+          href: listings["watercrafts"][i].thumbnailUrl,
           fetchpriority: 'high'
         });
       }
     })).subscribe();
   }
 
-  getHighlightListings(): Observable<ListingPreview[] | null> {
+  getHighlightListings(): Observable<HighlightListingsPreviews | null> {
     if (!this.isBrowser) {
       this.addPreloadFetchLink();
       return of(null);
@@ -53,12 +53,12 @@ export class ApiService {
     return  this.highlights$;
   }
 
-  private fetchHighlights(): Observable<ListingPreview[]> {
-    return fromFetch<{previews: ListingPreview[]}>(this.apiEndpoint, {
+  private fetchHighlights(): Observable<HighlightListingsPreviews> {
+    return fromFetch<HighlightListingsPreviews>(this.apiEndpoint, {
       selector: response => response.json()
     }).pipe(
       shareReplay(),
-      map(response => response.previews),
+      map(response => response),
     );
   }
 
