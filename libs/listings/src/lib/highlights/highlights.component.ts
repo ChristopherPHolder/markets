@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { ListingPreview } from '@markets/api-service';
@@ -9,12 +9,11 @@ import { ListingPreview } from '@markets/api-service';
   styleUrls: ['./highlights.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HighlightsComponent implements OnInit {
-  highlights$?: Observable<ListingPreview[] | null>;
+export class HighlightsComponent {
+  public readonly highlights$?: Observable<ListingPreview[] | null>;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.highlights$ = this.activatedRoute.data.pipe(map(data => data['highlights$']));
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.highlights$ = this.activatedRoute.data
+      .pipe(map(data => data['highlights$']));
   }
 }
