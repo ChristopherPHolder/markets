@@ -7,18 +7,8 @@ import { fromFetch } from 'rxjs/fetch';
 import { LinkService } from '@markets/link-service';
 import { environment } from '@markets/shared/environments';
 
-export interface ListingPreview {
-  id: number;
-  url: string;
-  thumbnailUrl: string;
-  type: 'watercraft' | string;
-  category?: 'Lancha' | string;
-  title?: string;
-  condition?: string;
-  price: string;
-  year?: number;
-  description?: string;
-}
+import {ListingPreview} from "./types";
+
 
 @Injectable()
 export class ApiService {
@@ -64,9 +54,9 @@ export class ApiService {
   }
 
   private fetchHighlights(): Observable<ListingPreview[]> {
-    return fromFetch<{previews: ListingPreview[]}>(this.apiEndpoint, { 
-      selector: response => response.json() 
-    }).pipe( 
+    return fromFetch<{previews: ListingPreview[]}>(this.apiEndpoint, {
+      selector: response => response.json()
+    }).pipe(
       shareReplay(),
       map(response => response.previews),
     );
