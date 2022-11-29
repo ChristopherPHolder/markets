@@ -2,6 +2,9 @@ markets-header {
   padding: 25px;
   display: grid;
   background-color: #122562;
+  color: azure;
+  grid-auto-columns: 1fr 1fr 1fr;
+  grid-template-areas: "logo search-bar login"
 }
 
 #header-logo {
@@ -11,4 +14,15 @@ markets-header {
     height: 35px;
     width: 95px;
   }
+  grid-area: logo;
+}
+
+#header-search-form {
+  grid-area: search-bar;
+  margin: auto;
+}
+
+#header-user-login {
+  grid-area: login;
+  margin: auto 0 auto auto;
 }
