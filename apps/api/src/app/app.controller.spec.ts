@@ -3,8 +3,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { ListingPreview } from '@markets/api-service';
-import * as _listing from '../assets/previews-watercraft.json';
+import { HighlightListingsPreviews } from '@markets/api-service';
+import * as _highlightListingsPreviews from '../assets/mock-data.json';
 
 describe('AppController', () => {
   let app: TestingModule;
@@ -16,11 +16,11 @@ describe('AppController', () => {
     }).compile();
   });
 
-  describe('getListingPreviews', () => {
+  describe('getHighlightListings', () => {
     it('should return Mocked listings', () => {
       const appController = app.get<AppController>(AppController);
-      const mockListingPreviews: ListingPreview[] = _listing.previews;
-      expect(appController.getListingPreviews()).toEqual(mockListingPreviews);
+      const mockHighlightListingsPreviews: HighlightListingsPreviews = _highlightListingsPreviews;
+      expect(appController.getHighlightListings()).toEqual(mockHighlightListingsPreviews);
     });
   });
 });
