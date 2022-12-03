@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiEndpoint: 'http://localhost:3333/api',
+  footerLogoSrc: 'https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/logo-redondo-amarillo.svg',
 };
 
 /*
