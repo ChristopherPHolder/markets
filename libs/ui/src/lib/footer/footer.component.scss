@@ -1,15 +1,16 @@
-app-footer {
+markets-footer {
   position: relative;
   bottom: 0;
-  background-color: #d7e5f4 !important;
+  background-color: #122562 !important;
+  color: whitesmoke;
   padding-top: 33px;
   display: grid;
   margin: auto;
-  bottom: 0;
   a:hover {
     color: #FFD200;
     cursor: pointer;
   }
+  text-align: center;
 }
 
 .footer-nav {
