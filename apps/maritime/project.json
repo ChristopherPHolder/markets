@@ -129,7 +129,9 @@
     "prerender": {
       "executor": "@nguniversal/builders:prerender",
       "options": {
-        "routes": ["/"]
+        "routes": ["/"],
+        "guessRoutes": true,
+        "routesFile": "apps/maritime/routes.txt"
       },
       "configurations": {
         "development": {
