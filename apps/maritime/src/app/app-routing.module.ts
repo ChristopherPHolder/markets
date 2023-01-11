@@ -3,9 +3,8 @@ import {  RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', 
-    loadChildren: () => 
-      import('@markets/listings').then(m => m.ListingsModule) 
+    path: '',
+    loadChildren: () => import('@markets/listings').then(m => m.ListingsModule)
   },
 ];
 
