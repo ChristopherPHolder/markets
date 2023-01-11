@@ -11,10 +11,7 @@ export class AppComponent implements AfterViewInit {
   footerComponent!: ViewContainerRef;
   title = 'maritime';
   ngAfterViewInit() {
-    setTimeout(() => {
-      console.log("After view init 2s")
-      this.loadFooter().then(() => console.log('loaded'));
-    } , 2_000)
+      this.loadFooter();
   }
 
   async loadFooter() {
