@@ -10,4 +10,5 @@ import { ListingPreview } from '@markets/api-service';
 
 export class HlListingsComponent {
   @Input() highlights?: ListingPreview[];
+  @Input() isLCP?: boolean;
 }
