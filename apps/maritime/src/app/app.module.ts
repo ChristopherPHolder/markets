@@ -5,7 +5,6 @@ import { UiModule } from "@markets/ui";
 import { ListingsModule } from '@markets/listings';
 import { AppRoutingModule } from './app-routing.module';
 import { ApiService } from '@markets/api-service';
-import { LetModule } from "@rx-angular/template/let";
 
 function initializeDataFactory(api: ApiService): () => Promise<void> {
   return () => new Promise((resolve) => {
@@ -21,7 +20,6 @@ function initializeDataFactory(api: ApiService): () => Promise<void> {
     UiModule,
     ListingsModule,
     AppRoutingModule,
-    LetModule
   ],
   providers: [
     ApiService,

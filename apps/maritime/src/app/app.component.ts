@@ -10,7 +10,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild("footerComponent", { read: ViewContainerRef })
   footerComponent!: ViewContainerRef;
   title = 'maritime';
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
       this.loadFooter();
   }
 
