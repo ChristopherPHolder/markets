@@ -11,7 +11,6 @@ import { HighlightListingsPreviews } from '@markets/api-service';
 })
 export class HighlightsComponent {
   public readonly highlights$?: Observable<HighlightListingsPreviews | null>;
-
   constructor(private activatedRoute: ActivatedRoute) {
     this.highlights$ = this.activatedRoute.data
       .pipe(map(data => data['highlights$']));

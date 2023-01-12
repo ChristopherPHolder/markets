@@ -1,7 +1,7 @@
 <ng-container *ngIf="highlights as listings; else loading">
   <article *ngFor="let listing of listings; let i = index" class="hl-listing">
     <div class="hl-listing-img-box">
-      <ng-container *ngIf="i < 4; else lazy">
+      <ng-container *ngIf="i < 4 && isLCP; else lazy">
         <img
           [src]="listing.thumbnailUrl"
           class="hl-listing-img"
@@ -35,4 +35,4 @@
       <li class="hl-listing-detail-desc"></li>
     </ul>
   </article>
-</ng-template>  
+</ng-template>
