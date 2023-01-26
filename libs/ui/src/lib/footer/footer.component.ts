@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { environment } from '@markets/shared/environments';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
+import { environment } from "@markets/shared/environments";
 import { CommonModule } from "@angular/common";
 
 @Component({
@@ -39,6 +39,7 @@ import { CommonModule } from "@angular/common";
   `,
   styleUrls: ['./footer.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
   readonly footerLogoSrc = environment.footerLogoSrc;
