@@ -1,0 +1,11 @@
+{
+  "collect": {
+    "url": "https://d2yeie3sfgsrg6.cloudfront.net",
+    "ufPath": "./user-flows"
+  },
+  "persist": {
+    "format": ["html", "json", "md", "stdout"],
+    "outPath": "./measures"
+  },
+  "assert": {}
+}
