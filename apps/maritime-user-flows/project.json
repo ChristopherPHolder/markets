@@ -1,0 +1,38 @@
+{
+  "name": "maritime-user-flows",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/maritime-user-flows/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/maritime-user-flows",
+        "format": ["cjs"],
+        "main": "apps/maritime-user-flows/src/main.ts",
+        "tsConfig": "apps/maritime-user-flows/tsconfig.app.json",
+        "assets": ["apps/maritime-user-flows/src/assets"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "maritime-user-flows:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "maritime-user-flows:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/maritime-user-flows/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
