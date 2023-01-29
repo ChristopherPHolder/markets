@@ -1,0 +1,68 @@
+.preview-listing {
+  margin: auto;
+  height: 345px;
+  width: 15vw;
+  @media (max-width: 1800px) {
+    width: 18vw;
+  }
+  @media (max-width: 1400px) {
+    width: 23vw;
+  }
+  @media (max-width: 900px) {
+    width: 31vw;
+  }
+  @media (max-width: 600px) {
+    width: 47vw;
+    height: 360px;
+  }
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.preview-listing-img {
+  min-height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.preview-listing-img-box {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.22), 0 0 4px 0 rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  border-radius: 8px;
+  height: 220px;
+  width: 15vw;
+  background-image: url(https://mexicomarino.com/img/icons/icon-picture.svg);
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 1800px) {
+    width: 18vw;
+  }
+  @media (max-width: 1400px) {
+    width: 23vw;
+  }
+  @media (max-width: 900px) {
+    width: 31vw;
+  }
+  @media (max-width: 600px) {
+    width: 47vw;
+  }
+}
+
+.preview-listing-details {
+  font-weight:100;
+  li {
+    margin-left: 8px;
+    margin-bottom: 5px;
+  }
+}
+
+.preview-listing-price {
+  padding-bottom: 5px;
+  font-size: large;
+  font-weight:900;
+}
+
+.preview-listing-detail-desc {
+  min-height: 60px;
+}

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HlListingsComponent } from './hl-listings.component';
+import { PreviewListingComponent } from "@markets/ui";
 
-describe('HlListingsComponent', () => {
-  let component: HlListingsComponent;
-  let fixture: ComponentFixture<HlListingsComponent>;
+describe('PreviewListingComponent', () => {
+  let component: PreviewListingComponent;
+  let fixture: ComponentFixture<PreviewListingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HlListingsComponent],
+      imports: [PreviewListingComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HlListingsComponent);
+    fixture = TestBed.createComponent(PreviewListingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

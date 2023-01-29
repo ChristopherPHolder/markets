@@ -4,21 +4,17 @@
 
 <h2 class="highlights-title">EMBARCACIONES</h2>
 
-<markets-hl-listings
+<markets-highlights-listings-grid
   [highlights]="(highlights$ | async)?.watercrafts ?? undefined"
   [isLCP]="true"
-></markets-hl-listings>
+/>
 
 <h2 class="highlights-title">PRODUCTOS</h2>
-
-<markets-hl-listings
+<markets-highlights-listings-grid
   [highlights]="(highlights$ | async)?.products ?? undefined"
-  [isLCP]="false"
-></markets-hl-listings>
+/>
 
 <h2 class="highlights-title">SERVICIOS</h2>
-
-<markets-hl-listings
+<markets-highlights-listings-grid
   [highlights]="(highlights$ | async)?.products ?? undefined"
-  [isLCP]="false"
-></markets-hl-listings>
+/>
