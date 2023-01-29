@@ -1,4 +1,3 @@
-// Your custom interactions with the page
 import {
   UserFlowContext,
   UserFlowInteractionsFn,
@@ -15,13 +14,13 @@ const interactions: UserFlowInteractionsFn = async (
     stepName: `Navigate to ${url}`,
   });
 
-  // ℹ Tip:
-  // Read more about the other measurement modes here:
-  // https://github.com/push-based/user-flow/blob/main/packages/cli/docs/writing-basic-user-flows.md
+  await flow.navigate('https://d2yeie3sfgsrg6.cloudfront.net', {
+    stepName: `Navigate to https://d2yeie3sfgsrg6.cloudfront.net`,
+  });
 };
 
 const userFlowProvider: UserFlowProvider = {
-  flowOptions: { name: 'Basic Navigation Example' },
+  flowOptions: { name: 'Cold and hot navigations' },
   interactions,
 };
 
