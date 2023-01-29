@@ -24,13 +24,37 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "260kb",
+              "maximumError": "300kB"
             },
             {
               "type": "anyComponentStyle",
               "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumError": "3kb"
+            },
+            {
+              "type": "bundle",
+              "name": "main",
+              "maximumWarning": "224kb",
+              "maximumError": "225kb"
+            },
+            {
+              "type": "bundle",
+              "name": "styles",
+              "maximumWarning": "154b",
+              "maximumError": "155b"
+            },
+            {
+              "type": "bundle",
+              "name": "common",
+              "maximumWarning": "10kB",
+              "maximumError": "11.22kB"
+            },
+            {
+              "type": "bundle",
+              "name": "polyfills",
+              "maximumWarning": "34kb",
+              "maximumError": "34kb"
             }
           ],
           "fileReplacements": [
