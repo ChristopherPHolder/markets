@@ -8,6 +8,7 @@
     "build": "nx build",
     "build:prod": "npx nx run maritime:prerender --configuration=production",
     "test": "nx test",
+    "user-flows": "nx run maritime-user-flows:e2e",
     "lint": "nx lint",
     "postinstall": "node ./decorate-angular-cli.js",
     "cy": "nx run maritime-e2e:e2e --watch",
