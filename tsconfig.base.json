@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@markets/api-service": ["libs/api-service/src/index.ts"],
+      "@markets/features": ["libs/features/src/index.ts"],
       "@markets/link-service": ["libs/link-service/src/index.ts"],
       "@markets/listings": ["libs/listings/src/index.ts"],
       "@markets/shared/environments": ["libs/shared/environments/src/index.ts"],
