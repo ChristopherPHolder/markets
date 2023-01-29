@@ -1,11 +1,9 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
 import { environment } from "@markets/shared/environments";
-import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'markets-footer',
   standalone: true,
-  imports: [CommonModule],
   template: `
     <nav class="footer-nav">
     <a>
