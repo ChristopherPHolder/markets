@@ -5,6 +5,24 @@ import { environment } from "@markets/shared/environments";
   selector: 'markets-footer',
   standalone: true,
   template: `
+    <picture>
+      <source
+        media="(min-width: 600px)"
+        srcset="https://mexicomarino.com/img/pblsdd/mexico_marino-82e99757.jpg"
+      />
+      <source
+        media="(max-width: 601px)"
+        srcset="https://mexicomarino.com/img/pblsdd/mexico_marino-11f83168.jpg"
+      />
+      <img
+        class="footer-banner"
+        src="https://mexicomarino.com/img/pblsdd/mexico_marino-82e99757.jpg"
+        alt="Explore our services banner"
+      >
+    </picture>
+    <div>
+
+    </div>
     <nav class="footer-nav">
     <a>
       <img
