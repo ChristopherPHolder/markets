@@ -4,7 +4,7 @@ import {
   OnInit,
   ViewEncapsulation
 } from "@angular/core";
-import { CommonModule } from '@angular/common';
+import { NgForOf, NgIf } from "@angular/common";
 import {
   PreviewListingComponent,
   PreviewListingGhostComponent,
@@ -15,9 +15,10 @@ import { ListingPreview } from "@markets/api-service";
   selector: 'markets-highlights-listings-grid',
   standalone: true,
   imports: [
-    CommonModule,
     PreviewListingComponent,
     PreviewListingGhostComponent,
+    NgIf,
+    NgForOf
   ],
   template: `
     <ng-container *ngIf="highlights as listings; else loading">

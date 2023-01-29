@@ -5,7 +5,7 @@ import {
   OnInit,
   ViewEncapsulation
 } from "@angular/core";
-import { CommonModule } from '@angular/common';
+import { NgIf } from "@angular/common";
 import { ListingPreview } from "@markets/api-service";
 
 type LoadingStrategy = 'lazy' | 'eager';
@@ -13,7 +13,9 @@ type LoadingStrategy = 'lazy' | 'eager';
 @Component({
   selector: 'markets-preview-listing',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    NgIf
+  ],
   template: `
     <ng-container *ngIf="listingPreview as listing">
       <article class="preview-listing">

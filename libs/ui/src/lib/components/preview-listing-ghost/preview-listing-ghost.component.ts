@@ -4,12 +4,10 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'markets-preview-listing-ghost',
   standalone: true,
-  imports: [CommonModule],
   template: `
     <article class="preview-listing">
       <div class="preview-listing-img-box"></div>
