@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'listings',
+  displayName: 'features',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/listings',
+  coverageDirectory: '../../coverage/libs/features',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
