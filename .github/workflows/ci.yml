@@ -84,12 +84,13 @@ jobs:
 
       - name: Run User Flows
         run: npm run user-flows
-	
+
       - name: Archive User Flow Reports
-	run: action/upload-artifact@v3
-	with:
-	  name: user-flows-reports
-	  path: apps/maritime-user-flows/src/measures
+        run: action/upload-artifact@v3
+        with:
+          name: user-flows-reports
+          path: apps/maritime-user-flows/src/measures
+          retention-days: 5
 
   deploy:
     name: Deploy
