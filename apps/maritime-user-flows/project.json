@@ -1,0 +1,24 @@
+{
+  "name": "maritime-user-flows",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/maritime-user-flows/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/maritime-user-flows/src",
+        "commands": ["ls","npx user-flow collect", "cd measures && ls" ],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/maritime-user-flows/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["maritime"]
+}
