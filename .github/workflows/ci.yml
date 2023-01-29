@@ -82,8 +82,14 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Run User Flow
+      - name: Run User Flows
         run: npm run user-flows
+	
+      - name: Archive User Flow Reports
+	run: action/upload-artifact@v3
+	with:
+	  name: user-flows-reports
+	  path: apps/maritime-user-flows/src/measures
 
   deploy:
     name: Deploy
