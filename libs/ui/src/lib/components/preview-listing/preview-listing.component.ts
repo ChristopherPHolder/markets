@@ -23,8 +23,8 @@ type LoadingStrategy = 'lazy' | 'eager';
           <img
             [src]="listing.thumbnailUrl"
             class="preview-listing-img"
-            fetchpriority="{{loading === 'eager' ? 'high' : 'low'}}"
-            loading="{{loading}}"
+            [attr.fetchpriority]="loading === 'eager' ? 'high' : 'low'"
+            [attr.loading]="loading"
           >
         </div>
         <ul class="preview-listing-details">
