@@ -1,12 +1,28 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
 import { environment } from "@markets/shared/environments";
-import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'markets-footer',
   standalone: true,
-  imports: [CommonModule],
   template: `
+    <picture>
+      <source
+        media="(min-width: 600px)"
+        srcset="https://mexicomarino.com/img/pblsdd/mexico_marino-82e99757.jpg"
+      />
+      <source
+        media="(max-width: 601px)"
+        srcset="https://mexicomarino.com/img/pblsdd/mexico_marino-11f83168.jpg"
+      />
+      <img
+        class="footer-banner"
+        src="https://mexicomarino.com/img/pblsdd/mexico_marino-82e99757.jpg"
+        alt="Explore our services banner"
+      >
+    </picture>
+    <div>
+
+    </div>
     <nav class="footer-nav">
     <a>
       <img
