@@ -90,7 +90,6 @@ jobs:
         with:
           name: user-flows-reports
           path: apps/maritime-user-flows/src/measures
-          retention-days: 5
 
   deploy:
     name: Deploy
