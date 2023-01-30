@@ -8,7 +8,7 @@ import { NgForOf, NgIf } from "@angular/common";
 import {
   PreviewListingComponent,
   PreviewListingGhostComponent,
-} from "@markets/ui";
+} from "ui";
 import { ListingPreview } from "data-access";
 
 @Component({

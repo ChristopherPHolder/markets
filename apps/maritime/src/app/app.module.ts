@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ApiService } from 'data-access';
-import { HeaderComponent } from "@markets/ui";
+import { HeaderComponent } from "ui";
 
 function initializeDataFactory(api: ApiService): () => Promise<void> {
   return () => new Promise((resolve) => {
