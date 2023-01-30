@@ -4,7 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { map, Observable, of, shareReplay, tap } from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
 
-import { LinkService } from '@markets/link-service';
+import { LinkService } from 'external-resource-link';
 import { environment } from '@markets/shared/environments';
 
 import { HighlightListingsPreviews } from "./types";

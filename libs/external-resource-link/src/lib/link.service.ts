@@ -36,5 +36,4 @@ export class LinkService {
     const head = this.document.getElementsByTagName('head')[0];
     head.appendChild(element);
   }
-
 }
