@@ -4,7 +4,7 @@
     "ufPath": "./apps/maritime-user-flows/src/user-flows"
   },
   "persist": {
-    "format": ["json"],
+    "format": ["md"],
     "outPath": "./apps/maritime-user-flows/src/measures"
   },
   "assert": {}

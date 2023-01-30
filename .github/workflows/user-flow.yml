@@ -45,6 +45,9 @@ jobs:
           message: 'Persist user flow reports'
           add: '*'
 
+      - name: Echo uf OutputPaths
+        run: echo ${{ steps.uf.outputs.result-path }}
+
       - name: Add reduced report as comment to the PR
         uses: marocchino/sticky-pull-request-comment@v2
         with:
