@@ -9,7 +9,7 @@ import {
   PreviewListingComponent,
   PreviewListingGhostComponent,
 } from "@markets/ui";
-import { ListingPreview } from "@markets/api-service";
+import { ListingPreview } from "data-access";
 
 @Component({
   selector: 'markets-highlights-listings-grid',

@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@markets/api-service": ["libs/api-service/src/index.ts"],
       "@markets/features": ["libs/features/src/index.ts"],
       "@markets/listings": ["libs/listings/src/index.ts"],
       "environments": ["libs/environments/src/index.ts"],
