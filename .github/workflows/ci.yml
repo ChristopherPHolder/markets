@@ -67,30 +67,30 @@ jobs:
       - name: Test
         run: npm run test
 
-#  user-flows:
-#    name: User Flows
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - uses: actions/checkout@v3
-#
-#      - uses: actions/setup-node@v3
-#        with:
-#          node-version: ${{ env.NODE_VERSION }}
-#          cache: npm
-#
-#      - name: Install dependencies
-#        run: npm i
-#
-#      - name: Run User Flows
-#        run: npm run user-flows
-#
-#      - name: Archive User Flow Reports
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: user-flows-reports
-#          path: apps/maritime-user-flows/src/measures/
-#          retention-days: 5
+  user-flows:
+    name: User Flows
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run User Flows
+        run: npm run user-flows
+
+      - name: Archive User Flow Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: user-flows-reports
+          path: apps/maritime-user-flows/src/measures/
+          retention-days: 5
 
   deploy:
     name: Deploy

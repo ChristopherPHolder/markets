@@ -4,7 +4,7 @@
     "ufPath": "./user-flows"
   },
   "persist": {
-    "format": ["html", "json"],
+    "format": ["html", "json", "md", "stdout"],
     "outPath": "./measures"
   },
   "assert": {}
