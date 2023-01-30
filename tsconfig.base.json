@@ -15,12 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@markets/features": ["libs/features/src/index.ts"],
+      "features": ["libs/features/src/index.ts"],
       "@markets/listings": ["libs/listings/src/index.ts"],
-      "environments": ["libs/environments/src/index.ts"],
       "@markets/ui": ["libs/ui/src/index.ts"],
       "@markets/ui/footer": ["libs/ui/src/lib/footer/footer.component.lazy.ts"],
       "data-access": ["libs/data-access/src/index.ts"],
+      "environments": ["libs/environments/src/index.ts"],
       "external-resource-link": ["libs/external-resource-link/src/index.ts"]
     }
   },
