@@ -16,3 +16,16 @@ export interface HighlightListingsPreviews {
   products: ListingPreview[];
   services: ListingPreview[];
 }
+
+export interface ListingDetails extends ListingPreview {
+  brand: string;
+  model: string;
+  state: string;
+  feet: string;
+  horsePower: string;
+  numberOfMotors: number;
+  motorBrand: string;
+  sellersName: string;
+  sellersPhone: string;
+  sellersEmail: string;
+}
