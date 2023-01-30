@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
-import {  RouterModule, Routes } from '@angular/router';
-import { featuresRoutes } from "@markets/features";
-
-const routes: Routes = featuresRoutes;
+import {  RouterModule } from '@angular/router';
+import { featuresRoutes } from "features";
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
+  imports: [RouterModule.forRoot(featuresRoutes, {
     initialNavigation: 'enabledBlocking'
 })],
   exports: [RouterModule]
