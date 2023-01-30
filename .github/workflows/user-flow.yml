@@ -13,43 +13,44 @@ on:
       - main
 
 jobs:
-  user-flow-ci: User Flow CI
-  runs-on: ubuntu-latest
+  user-flow-ci:
+    name: User Flow CI
+    runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: npm
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Build
-      run: npm run build
+      - name: Build
+        run: npm run build
 
-    - name: Executing user-flow CLI
-      uses: push-based/user-flow-gh-action@v0.0.0-alpha.10
-      id: uf
-      with:
-        verbose: on
-        rcPath: ./apps/maritime-user-flows/src/.user-flowrc.json
+      - name: Executing user-flow CLI
+        uses: push-based/user-flow-gh-action@v0.0.0-alpha.10
+        id: uf
+        with:
+          verbose: on
+          rcPath: ./apps/maritime-user-flows/src/.user-flowrc.json
 
-    - name: Commit measures
-      uses: EndBug/add-and-commit@v7
-      with:
-        author_name: github-bot
-        author_email: opensource@deep-blue.io
-        message: 'Persist user flow reports'
-        add: '*'
+      - name: Commit measures
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: github-bot
+          author_email: opensource@deep-blue.io
+          message: 'Persist user flow reports'
+          add: '*'
 
-    - name: Add reduced report as comment to the PR
-      uses: marocchino/sticky-pull-request-comment@v2
-      with:
-        header: step name
-        message: |
-          steps.uf.outputs.result-path:
-          ${{ steps.uf.outputs.result-path }}
-          steps.uf.outputs.result:
-          ${{ steps.uf.outputs.result }}
+      - name: Add reduced report as comment to the PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: step name
+          message: |
+            steps.uf.outputs.result-path:
+            ${{ steps.uf.outputs.result-path }}
+            steps.uf.outputs.result:
+            ${{ steps.uf.outputs.result }}
