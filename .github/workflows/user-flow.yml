@@ -53,8 +53,4 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: step name
-          message: |
-            steps.uf.outputs.result-path:
-            ${{ steps.uf.outputs.result-path }}
-            steps.uf.outputs.result:
-            ${{ steps.uf.outputs.result }}
+          message: ${{ steps.uf.outputs.resultSummary }}
