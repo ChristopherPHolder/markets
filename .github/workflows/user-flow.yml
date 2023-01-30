@@ -35,7 +35,7 @@ jobs:
         id: uf
         with:
           verbose: on
-          rcPath: ./apps/maritime-user-flows/src/.user-flowrc.json
+          rcPath: ../apps/maritime-user-flows/src/.user-flowrc.json
 
       - name: Commit measures
         uses: EndBug/add-and-commit@v7
