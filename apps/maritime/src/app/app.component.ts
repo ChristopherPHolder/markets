@@ -15,7 +15,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   async loadFooter() {
-    const lazyFooterComponent = await import("@markets/ui/footer").then(c => c.c);
+    const lazyFooterComponent = await import("ui/footer").then(c => c.c);
     this.footerComponent.clear();
     this.footerComponent.createComponent(lazyFooterComponent);
   }
