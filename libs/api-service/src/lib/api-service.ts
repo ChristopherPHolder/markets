@@ -26,6 +26,16 @@ export class ApiService {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
+  private _fetch<T>(): Observable<T> {
+    return fromFetch<T>(this.apiEndpoint, {
+      selector: response => response.json()
+    }).pipe(
+      shareReplay(),
+      map(response => response),
+    );
+
+  }
+
   addPreloadLCPLinks():void {
     this.getHighlightListings().pipe(tap((listings) => {
       if (!listings) {
