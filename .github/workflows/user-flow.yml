@@ -4,6 +4,7 @@ env:
   NODE_VERSION: 18
   is-main-branch: ${{ github.ref == 'refs/heads/main' }}
   is-pull-request: ${{ github.event_name == 'pull_request' }}
+  working-directory: ./apps/maritime-user-flows/src
 
 on:
   pull_request: {}
@@ -17,12 +18,22 @@ jobs:
     name: User Flow CI
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
+
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
+
+      - name: Check Working Directory
+        run: ls
+
+      - name: Check RcPath
 
       - name: Install dependencies
         run: npm ci
@@ -35,7 +46,6 @@ jobs:
         id: uf
         with:
           verbose: on
-          rcPath: ../apps/maritime-user-flows/src/.user-flowrc.json
 
       - name: Commit measures
         uses: EndBug/add-and-commit@v7
