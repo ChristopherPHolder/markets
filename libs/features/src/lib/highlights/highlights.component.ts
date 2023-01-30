@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { HighlightListingsPreviews } from '@markets/api-service';
+import { HighlightListingsPreviews } from 'data-access';
 import { HighlightsListingsGridComponent } from "@markets/ui";
 import { AsyncPipe } from "@angular/common";
 

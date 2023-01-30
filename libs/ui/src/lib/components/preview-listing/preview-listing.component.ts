@@ -6,7 +6,7 @@ import {
   ViewEncapsulation
 } from "@angular/core";
 import { NgIf } from "@angular/common";
-import { ListingPreview } from "@markets/api-service";
+import { ListingPreview } from "data-access";
 
 type LoadingStrategy = 'lazy' | 'eager';
 
