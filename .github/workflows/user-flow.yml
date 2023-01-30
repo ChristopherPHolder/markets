@@ -31,8 +31,8 @@ jobs:
         run: npm run build
 
       - name: Executing user-flow CLI
-        uses: push-based/user-flow-gh-action@v0.0.0-alpha.10
         id: uf
+        uses: push-based/user-flow-gh-action@v0.0.0-alpha.11
         with:
           verbose: on
           rcPath: ./apps/maritime-user-flows/src/.user-flowrc.json
