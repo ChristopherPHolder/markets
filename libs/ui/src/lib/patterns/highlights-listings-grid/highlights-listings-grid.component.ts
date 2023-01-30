@@ -5,10 +5,9 @@ import {
   ViewEncapsulation
 } from "@angular/core";
 import { NgForOf, NgIf } from "@angular/common";
-import {
-  PreviewListingComponent,
-  PreviewListingGhostComponent,
-} from "ui";
+import { PreviewListingComponent } from "../../components/preview-listing/preview-listing.component";
+import { PreviewListingGhostComponent } from "../../components/preview-listing-ghost/preview-listing-ghost.component";
+
 import { ListingPreview } from "data-access";
 
 @Component({
