@@ -34,6 +34,7 @@ jobs:
         id: uf
         uses: push-based/user-flow-gh-action@v0.0.0-alpha.11
         with:
+          dryRun: off
           verbose: on
           rcPath: ./apps/maritime-user-flows/src/.user-flowrc.json
 
