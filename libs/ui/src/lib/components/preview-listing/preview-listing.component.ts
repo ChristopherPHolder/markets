@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit,
   ViewEncapsulation
 } from "@angular/core";
 import { NgIf } from "@angular/common";
@@ -42,12 +41,7 @@ type LoadingStrategy = 'lazy' | 'eager';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PreviewListingComponent implements OnInit {
-
+export class PreviewListingComponent {
   @Input() listingPreview!: ListingPreview;
   @Input() loading!: LoadingStrategy;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

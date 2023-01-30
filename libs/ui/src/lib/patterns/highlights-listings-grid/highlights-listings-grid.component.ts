@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component, Input,
-  OnInit,
   ViewEncapsulation
 } from "@angular/core";
 import { NgForOf, NgIf } from "@angular/common";
@@ -39,11 +38,7 @@ import { ListingPreview } from "data-access";
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HighlightsListingsGridComponent implements OnInit {
+export class HighlightsListingsGridComponent {
   @Input() highlights?: ListingPreview[];
   @Input() isLCP?: boolean;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
