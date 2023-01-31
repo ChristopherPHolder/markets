@@ -29,7 +29,15 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        id: cache-primes
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
       - name: Clean Install
+        if: steps.cache-primes.outputs.cache-hit != 'true'
         run: npm ci
 
   build:
@@ -51,6 +59,11 @@ jobs:
 
 #      - name: Clean Install
 #        run: npm ci
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Build
         run: npx nx affected --target=build --parallel=3
