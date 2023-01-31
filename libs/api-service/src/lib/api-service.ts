@@ -5,7 +5,7 @@ import { map, Observable, of, shareReplay, tap } from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
 
 import { LinkService } from 'external-resource-link';
-import { environment } from '@markets/shared/environments';
+import { environment } from 'environments';
 
 import { HighlightListingsPreviews } from "./types";
 
