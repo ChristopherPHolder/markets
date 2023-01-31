@@ -49,8 +49,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      - name: Clean Install
-        run: npm ci
+#      - name: Clean Install
+#        run: npm ci
 
       - name: Build
         run: npx nx affected --target=build --parallel=3
