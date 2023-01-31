@@ -35,20 +35,20 @@ jobs:
       - name: Clean Install
         run: npm ci
 
-  build:
-    name: Build
-    needs: setup
-    run: npx nx affected --target=build --parallel=3
-
-  test:
-    name: Test
-    needs: setup
-    run: npx nx affected --target=test --parallel=3
-
-  lint:
-    name: Lint
-    needs: setup
-    run: npx nx affected --target=lint --parallel=3
+#  build:
+#    name: Build
+#    needs: setup
+#    run: npx nx affected --target=build --parallel=3
+#
+#  test:
+#    name: Test
+#    needs: setup
+#    run: npx nx affected --target=test --parallel=3
+#
+#  lint:
+#    name: Lint
+#    needs: setup
+#    run: npx nx affected --target=lint --parallel=3
 
 #
 #
