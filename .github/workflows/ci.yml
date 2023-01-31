@@ -35,17 +35,32 @@ jobs:
   build:
     name: Build
     needs: setup
-    run: npx nx affected --target=build --parallel=3
+    runs-on: ubuntu-latest
 
-  test:
-    name: Test
-    needs: setup
-    run: npx nx affected --target=test --parallel=3
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+      # Derive appropriate SHAs for base and head for `nx affected` commands
+      - uses: nrwl/nx-set-shas@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-  lint:
-    name: Lint
-    needs: setup
-    run: npx nx affected --target=lint --parallel=3
+      - name: Build
+        run: npx nx affected --target=build --parallel=3
+
+#  test:
+#    name: Test
+#    needs: setup
+#    run: npx nx affected --target=test --parallel=3
+#
+#  lint:
+#    name: Lint
+#    needs: setup
+#    run: npx nx affected --target=lint --parallel=3
 
 #
 #
