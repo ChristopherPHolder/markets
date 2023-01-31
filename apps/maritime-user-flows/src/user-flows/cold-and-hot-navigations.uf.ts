@@ -14,8 +14,8 @@ const interactions: UserFlowInteractionsFn = async (
     stepName: `Navigate to ${url}`,
   });
 
-  await flow.navigate('https://d2yeie3sfgsrg6.cloudfront.net', {
-    stepName: `Navigate to https://d2yeie3sfgsrg6.cloudfront.net`,
+  await flow.navigate(url, {
+    stepName: `Navigate to ${url}`,
   });
 };
 

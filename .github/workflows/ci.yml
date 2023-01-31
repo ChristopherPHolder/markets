@@ -148,9 +148,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
 
-      - name: Prerender Affected
-        run: npx nx run maritime:prerender:production
-
       - name: Deploy Dev
         if: ${{ env.is-pull-request == 'true' }}
         run: npx nx affected --target=deploy --environment=prod
@@ -181,6 +178,9 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Puppeteer
+        run: npm i puppeteer
 
       - name: Run User Flows
         run: npx nx run maritime-user-flows:e2e
