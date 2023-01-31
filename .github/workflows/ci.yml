@@ -153,11 +153,11 @@ jobs:
 
       - name: Deploy Dev
         if: ${{ env.is-pull-request == 'true' }}
-        run: npm run deploy:dev
+        run: npx nx affected --target=deploy --environment=prod
 
       - name: Deploy Prod
         if: ${{ env.is-main-branch == 'true' }}
-        run: npm run deploy:prod
+        run: npx nx affected --target=deploy --environment=prod
 
   user-flows:
     name: User Flow
