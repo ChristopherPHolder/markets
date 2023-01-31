@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LinkService } from './link.service';
+import { LinkService } from 'external-resource-link';
 
 describe('LinkService', () => {
   let service: LinkService;
