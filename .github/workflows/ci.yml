@@ -35,11 +35,13 @@ jobs:
         uses: actions/cache@v3
         id: cache-primes
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.cache
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Clean Install
-        if: steps.cache-primes.outputs.cache-hit != 'true'
+#        if: steps.cache-primes.outputs.cache-hit != 'true'
         run: npm ci
 
   build:
@@ -176,11 +178,10 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.cache
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Puppeteer
-        run: npm ci
 
       - name: Run User Flows
         run: npx nx run maritime-user-flows:e2e
