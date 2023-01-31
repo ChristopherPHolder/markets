@@ -160,8 +160,8 @@ jobs:
         run: npm run deploy:prod
 
   user-flows:
-    name: deploy
-    needs: main
+    name: User Flow
+    needs: deploy
     runs-on: ubuntu-latest
 
     steps:
