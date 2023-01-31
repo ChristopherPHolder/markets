@@ -149,7 +149,7 @@ jobs:
           aws-region: eu-central-1
 
       - name: Prerender Affected
-        run: nx run maritime:prerender:production
+        run: npx nx run maritime:prerender:production
 
       - name: Deploy Dev
         if: ${{ env.is-pull-request == 'true' }}
