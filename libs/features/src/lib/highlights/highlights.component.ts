@@ -1,12 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { HighlightListingsPreviews } from '@markets/api-service';
-import { HighlightsListingsGridComponent } from "@markets/ui";
+import { HighlightListingsPreviews } from 'data-access';
+import { HighlightsListingsGridComponent } from "ui";
 import { AsyncPipe } from "@angular/common";
 
 @Component({
-  selector: "markets-highlights",
   standalone: true,
   templateUrl: "./highlights.component.html",
   styleUrls: ["./highlights.component.scss"],

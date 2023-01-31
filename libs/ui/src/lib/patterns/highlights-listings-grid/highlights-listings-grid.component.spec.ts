@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HighlightsListingsGridComponent } from "@markets/ui";
+import { HighlightsListingsGridComponent } from "ui";
 
 describe('HighlightsListingsGridComponent', () => {
   let component: HighlightsListingsGridComponent;
