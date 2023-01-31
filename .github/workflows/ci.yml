@@ -47,8 +47,6 @@ jobs:
       - name: Lint
         run: npx nx affected --target=lint --parallel=3
 
-      - name: Deploy
-
   deploy:
     name: Deploy
     needs: main
