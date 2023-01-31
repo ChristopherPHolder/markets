@@ -65,7 +65,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
-      - name: Build
+      - name: Build Affected
         run: npx nx affected --target=build --parallel=3
 
   test:
@@ -91,7 +91,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
-      - name: Test
+      - name: Test Affected
         run: npx nx affected --target=test --parallel=3
 
   lint:
@@ -117,7 +117,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
-      - name: Lint
+      - name: Lint Affected
         run: npx nx affected --target=lint --parallel=3
 
   deploy:
@@ -148,8 +148,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
 
-      - name: Prerender
-        run: npx nx run maritime:prerender
+      - name: Prerender Affected
+        run: nx run maritime:prerender:production
 
       - name: Deploy Dev
         if: ${{ env.is-pull-request == 'true' }}
