@@ -123,8 +123,8 @@
           "outputHashing": "media",
           "fileReplacements": [
             {
-              "replace": "libs/shared/environments/src/lib/environment.ts",
-              "with": "libs/shared/environments/src/lib/environment.prod.ts"
+              "replace": "libs/environments/src/lib/environment.ts",
+              "with": "libs/environments/src/lib/environment.prod.ts"
             }
           ]
         },
