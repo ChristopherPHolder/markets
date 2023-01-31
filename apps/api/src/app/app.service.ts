@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { HighlightListingsPreviews } from '@markets/api-service';
+import { HighlightListingsPreviews } from 'data-access';
 import * as _highlightListings from '../assets/mock-data.json';
 
 @Injectable()
