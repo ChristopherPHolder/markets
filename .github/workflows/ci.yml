@@ -41,7 +41,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Clean Install
-#        if: steps.cache-primes.outputs.cache-hit != 'true'
+        if: steps.cache-primes.outputs.cache-hit != 'true'
         run: npm ci
 
   build:
@@ -184,7 +184,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Run User Flows
-        run: npx nx run maritime-user-flows:e2e
+        run: npx nx run maritime-user-flows:e2e --skip-nx-cache
 
       - name: Archive User Flow Reports
         uses: actions/upload-artifact@v3
