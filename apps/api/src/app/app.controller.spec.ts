@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { HighlightListingsPreviews } from '@markets/api-service';
+import { HighlightListingsPreviews } from 'data-access';
 import * as _highlightListingsPreviews from '../assets/mock-data.json';
 
 describe('AppController', () => {
