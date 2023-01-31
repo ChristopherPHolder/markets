@@ -20,5 +20,6 @@
       }
     }
   },
-  "tags": ["maritime"]
+  "tags": ["maritime"],
+  "implicitDependencies": ["maritime"]
 }
