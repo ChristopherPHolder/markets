@@ -1,0 +1,56 @@
+name: User Flow CI
+
+env:
+  NODE_VERSION: 18
+  is-main-branch: ${{ github.ref == 'refs/heads/main' }}
+  is-pull-request: ${{ github.event_name == 'pull_request' }}
+
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
+jobs:
+  user-flow-ci:
+    name: User Flow CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Executing user-flow CLI
+        id: uf
+        uses: push-based/user-flow-gh-action@v0.0.0-alpha.11
+        with:
+          dryRun: off
+          verbose: on
+          rcPath: ./apps/maritime-user-flows/src/.user-flowrc.json
+
+      - name: Commit measures
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: github-bot
+          author_email: opensource@deep-blue.io
+          message: 'Persist user flow reports'
+          add: '*'
+
+      - name: Echo uf OutputPaths
+        run: echo ${{ steps.uf.outputs.result-path }}
+
+      - name: Add reduced report as comment to the PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: user flow summary report
+          message: ${{ steps.uf.outputs.resultSummary }}

@@ -1,11 +1,11 @@
 {
   "collect": {
     "url": "https://d2yeie3sfgsrg6.cloudfront.net",
-    "ufPath": "./user-flows"
+    "ufPath": "./apps/maritime-user-flows/src/user-flows"
   },
   "persist": {
-    "format": ["html", "json", "md", "stdout"],
-    "outPath": "./measures"
+    "format": ["md"],
+    "outPath": "./apps/maritime-user-flows/src/measures"
   },
   "assert": {}
 }

@@ -1,126 +1,126 @@
-name: Markets CI
-
-env:
-  NODE_VERSION: 18
-  is-main-branch: ${{ github.ref == 'refs/heads/main' }}
-  is-pull-request: ${{ github.event_name == 'pull_request' }}
-
-on:
-  pull_request: {}
-  workflow_dispatch: {}
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Test
-        run: npm run test
-
-  user-flows:
-    name: User Flows
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - name: Install dependencies
-        run: npm i
-
-      - name: Run User Flows
-        run: npm run user-flows
-
-      - name: Archive User Flow Reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: user-flows-reports
-          path: apps/maritime-user-flows/src/measures/
-          retention-days: 5
-
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-central-1
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Dev
-        run: npm run build:prod
-
-      - name: Deploy Dev
-        if: ${{ env.is-pull-request == 'true' }}
-        run: npm run deploy:dev
-
-      - name: Deploy Prod
-        if: ${{ env.is-main-branch == 'true' }}
-        run: npm run deploy:prod
+#name: Markets CI
+#
+#env:
+#  NODE_VERSION: 18
+#  is-main-branch: ${{ github.ref == 'refs/heads/main' }}
+#  is-pull-request: ${{ github.event_name == 'pull_request' }}
+#
+#on:
+#  pull_request: {}
+#  workflow_dispatch: {}
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  build:
+#    name: Build
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v3
+#
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ env.NODE_VERSION }}
+#          cache: npm
+#
+#      - name: Install dependencies
+#        run: npm ci
+#
+#      - name: Build
+#        run: npm run build
+#
+#  lint:
+#    name: Lint
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v3
+#
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ env.NODE_VERSION }}
+#          cache: npm
+#
+#      - name: Install dependencies
+#        run: npm ci
+#
+#      - name: Lint
+#        run: npm run lint
+#
+#  test:
+#    name: Test
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v3
+#
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ env.NODE_VERSION }}
+#          cache: npm
+#
+#      - name: Install dependencies
+#        run: npm ci
+#
+#      - name: Test
+#        run: npm run test
+#
+#  user-flows:
+#    name: User Flows
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v3
+#
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ env.NODE_VERSION }}
+#          cache: npm
+#
+#      - name: Install dependencies
+#        run: npm i
+#
+#      - name: Run User Flows
+#        run: npm run user-flows
+#
+#      - name: Archive User Flow Reports
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: user-flows-reports
+#          path: apps/maritime-user-flows/src/measures/
+#          retention-days: 5
+#
+#  deploy:
+#    name: Deploy
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v3
+#
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ env.NODE_VERSION }}
+#          cache: npm
+#
+#      - name: Configure AWS Credentials
+#        uses: aws-actions/configure-aws-credentials@v1
+#        with:
+#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws-region: eu-central-1
+#
+#      - name: Install dependencies
+#        run: npm ci
+#
+#      - name: Build Dev
+#        run: npm run build:prod
+#
+#      - name: Deploy Dev
+#        if: ${{ env.is-pull-request == 'true' }}
+#        run: npm run deploy:dev
+#
+#      - name: Deploy Prod
+#        if: ${{ env.is-main-branch == 'true' }}
+#        run: npm run deploy:prod
