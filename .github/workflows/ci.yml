@@ -29,7 +29,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npm run affected:build
 
   lint:
     name: Lint
@@ -47,7 +47,7 @@ jobs:
         run: npm ci
 
       - name: Lint
-        run: npm run lint
+        run: npm run affected:lint
 
   test:
     name: Test
@@ -65,7 +65,7 @@ jobs:
         run: npm ci
 
       - name: Test
-        run: npm run test
+        run: npm run affected:test
 
   user-flows:
     name: User Flows
@@ -115,7 +115,7 @@ jobs:
         run: npm ci
 
       - name: Build Dev
-        run: npm run build:prod
+        run: npm run maritime:prerender
 
       - name: Deploy Dev
         if: ${{ env.is-pull-request == 'true' }}
