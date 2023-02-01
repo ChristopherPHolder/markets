@@ -15,13 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@markets/api-service": ["libs/api-service/src/index.ts"],
-      "@markets/features": ["libs/features/src/index.ts"],
-      "@markets/link-service": ["libs/link-service/src/index.ts"],
-      "@markets/listings": ["libs/listings/src/index.ts"],
-      "@markets/shared/environments": ["libs/shared/environments/src/index.ts"],
-      "@markets/ui": ["libs/ui/src/index.ts"],
-      "@markets/ui/footer": ["libs/ui/src/lib/footer/footer.component.lazy.ts"]
+      "ui": ["libs/ui/src/index.ts"],
+      "ui/footer": ["libs/ui/src/lib/footer/footer.component.lazy.ts"],
+      "data-access": ["libs/data-access/src/index.ts"],
+      "environments": ["libs/environments/src/index.ts"],
+      "external-resource-link": ["libs/external-resource-link/src/index.ts"],
+      "features": ["libs/features/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

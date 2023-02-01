@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {  Resolve } from '@angular/router';
-import { HighlightListingsPreviews, ApiService } from '@markets/api-service';
+import { HighlightListingsPreviews, ApiService } from 'data-access';
 import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})

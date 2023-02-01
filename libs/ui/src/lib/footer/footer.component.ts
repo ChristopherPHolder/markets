@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
-import { environment } from "@markets/shared/environments";
+import { environment } from "environments";
 
 @Component({
   selector: 'markets-footer',

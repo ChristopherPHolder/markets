@@ -1,15 +1,13 @@
 import {
   ChangeDetectionStrategy,
   Component, Input,
-  OnInit,
   ViewEncapsulation
 } from "@angular/core";
 import { NgForOf, NgIf } from "@angular/common";
-import {
-  PreviewListingComponent,
-  PreviewListingGhostComponent,
-} from "@markets/ui";
-import { ListingPreview } from "@markets/api-service";
+import { PreviewListingComponent } from "../../components/preview-listing/preview-listing.component";
+import { PreviewListingGhostComponent } from "../../components/preview-listing-ghost/preview-listing-ghost.component";
+
+import { ListingPreview } from "data-access";
 
 @Component({
   selector: 'markets-highlights-listings-grid',
@@ -40,11 +38,7 @@ import { ListingPreview } from "@markets/api-service";
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HighlightsListingsGridComponent implements OnInit {
+export class HighlightsListingsGridComponent {
   @Input() highlights?: ListingPreview[];
   @Input() isLCP?: boolean;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

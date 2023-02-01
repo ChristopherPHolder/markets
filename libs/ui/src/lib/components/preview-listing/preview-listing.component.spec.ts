@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PreviewListingComponent } from "@markets/ui";
+import { PreviewListingComponent } from "ui";
 
 describe('PreviewListingComponent', () => {
   let component: PreviewListingComponent;

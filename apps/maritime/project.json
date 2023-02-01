@@ -59,8 +59,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "libs/shared/environments/src/lib/environment.ts",
-              "with": "libs/shared/environments/src/lib/environment.prod.ts"
+              "replace": "libs/environments/src/lib/environment.ts",
+              "with": "libs/environments/src/lib/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -123,8 +123,8 @@
           "outputHashing": "media",
           "fileReplacements": [
             {
-              "replace": "libs/shared/environments/src/lib/environment.ts",
-              "with": "libs/shared/environments/src/lib/environment.prod.ts"
+              "replace": "libs/environments/src/lib/environment.ts",
+              "with": "libs/environments/src/lib/environment.prod.ts"
             }
           ]
         },
@@ -168,6 +168,16 @@
         }
       },
       "defaultConfiguration": "production"
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["prerender"],
+      "options": {
+        "commands": [
+          "echo 'Deploying to {args.environment} environment'",
+          "aws s3 sync ./dist/apps/maritime/browser s3://marketsapp{args.environment} --delete"
+        ]
+      }
     }
   },
   "tags": []
