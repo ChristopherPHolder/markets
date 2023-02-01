@@ -35,7 +35,10 @@ jobs:
         uses: actions/cache@v3
         id: cache-primes
         with:
-          path: node_modules
+          path: |
+            ~/.cache
+            node_modules
+
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Clean Install
@@ -148,16 +151,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
 
-      - name: Prerender Affected
-        run: npx nx run maritime:prerender:production
-
       - name: Deploy Dev
         if: ${{ env.is-pull-request == 'true' }}
-        run: npm run deploy:dev
+        run: npx nx affected --target=deploy --environment=prod
 
       - name: Deploy Prod
         if: ${{ env.is-main-branch == 'true' }}
-        run: npm run deploy:prod
+        run: npx nx affected --target=deploy --environment=prod
 
   user-flows:
     name: User Flow
@@ -179,7 +179,9 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            ~/.cache
+            node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Run User Flows

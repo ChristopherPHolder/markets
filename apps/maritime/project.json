@@ -168,6 +168,16 @@
         }
       },
       "defaultConfiguration": "production"
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["prerender"],
+      "options": {
+        "commands": [
+          "echo 'Deploying to {args.environment} environment'",
+          "aws s3 sync ./dist/apps/maritime/browser s3://marketsapp{args.environment} --delete"
+        ]
+      }
     }
   },
   "tags": []

@@ -15,9 +15,7 @@
     "dev": "nx run serve-ssr & nx serve api",
     "affected:apps": "nx affected:apps",
     "affected:test": "nx affected:test",
-    "affected:lint": "nx affected:lint",
-    "deploy:dev": "aws s3 sync ./dist/apps/maritime/browser s3://marketsappdev --delete",
-    "deploy:prod": "aws s3 sync ./dist/apps/maritime/browser s3://marketsappprod --delete"
+    "affected:lint": "nx affected:lint"
   },
   "private": true,
   "dependencies": {
