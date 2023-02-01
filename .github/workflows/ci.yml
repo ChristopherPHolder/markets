@@ -179,6 +179,9 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
+      - name: Install Puppeteer
+        run: npm ci
+
       - name: Run User Flows
         run: npx nx run maritime-user-flows:e2e --skip-nx-cache
 
