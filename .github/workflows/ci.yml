@@ -35,10 +35,13 @@ jobs:
         uses: actions/cache@v3
         id: cache-primes
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.cache
+            dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
-      - name: Clean Install
+      - name: Clean Install Dependencies
         if: steps.cache-primes.outputs.cache-hit != 'true'
         run: npm ci
 
@@ -62,7 +65,10 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.cache
+            dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Build Affected
@@ -88,7 +94,10 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.cache
+            dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Test Affected
@@ -114,7 +123,10 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.cache
+            dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Lint Affected
@@ -138,7 +150,10 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.cache
+            dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Configure AWS Credentials
@@ -176,7 +191,10 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.cache
+            dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Run User Flows
