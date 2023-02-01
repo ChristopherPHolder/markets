@@ -218,7 +218,7 @@ jobs:
         run: npm ci
 
       - name: Run User Flows
-        run: npx nx run maritime-user-flows:e2e --skip-nx-cache
+        run: npx nx run maritime-user-flows:e2e
 
       - name: Archive User Flow Reports
         uses: actions/upload-artifact@v3
