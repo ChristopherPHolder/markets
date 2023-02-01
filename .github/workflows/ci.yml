@@ -64,7 +64,9 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Build Affected
@@ -140,7 +142,9 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Configure AWS Credentials
