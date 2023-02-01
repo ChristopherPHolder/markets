@@ -39,7 +39,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Clean Install
-#        if: steps.cache-primes.outputs.cache-hit != 'true'
+        if: steps.cache-primes.outputs.cache-hit != 'true'
         run: npm ci
 
   build:
