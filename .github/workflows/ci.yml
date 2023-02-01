@@ -41,7 +41,7 @@ jobs:
             dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
-      - name: Clean Install
+      - name: Clean Install Dependencies
         if: steps.cache-primes.outputs.cache-hit != 'true'
         run: npm ci
 
@@ -70,10 +70,6 @@ jobs:
             ~/.cache
             dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
-      - name: Clean Install
-        if: steps.cache-primes.outputs.cache-hit != 'true'
-        run: npm ci
 
       - name: Build Affected
         run: npx nx affected --target=build --parallel=3
@@ -104,10 +100,6 @@ jobs:
             dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
-      - name: Clean Install
-        if: steps.cache-primes.outputs.cache-hit != 'true'
-        run: npm ci
-
       - name: Test Affected
         run: npx nx affected --target=test --parallel=3
 
@@ -137,10 +129,6 @@ jobs:
             dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
-      - name: Clean Install
-        if: steps.cache-primes.outputs.cache-hit != 'true'
-
-        run: npm ci
       - name: Lint Affected
         run: npx nx affected --target=lint --parallel=3
 
@@ -167,10 +155,6 @@ jobs:
             ~/.cache
             dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
-      - name: Clean Install
-        if: steps.cache-primes.outputs.cache-hit != 'true'
-        run: npm ci
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -212,10 +196,6 @@ jobs:
             ~/.cache
             dist
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
-      - name: Clean Install
-        if: steps.cache-primes.outputs.cache-hit != 'true'
-        run: npm ci
 
       - name: Run User Flows
         run: npx nx run maritime-user-flows:e2e
