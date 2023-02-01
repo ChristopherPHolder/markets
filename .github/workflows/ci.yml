@@ -35,9 +35,7 @@ jobs:
         uses: actions/cache@v3
         id: cache-primes
         with:
-          path: |
-            ~/.cache
-            node_modules
+          path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Clean Install
@@ -64,9 +62,7 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: |
-            node_modules
-            dist
+          path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Build Affected
@@ -142,9 +138,7 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: |
-            node_modules
-            dist
+          path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Configure AWS Credentials
@@ -182,9 +176,7 @@ jobs:
       - name: Cache NPM Dependencies
         uses: actions/cache@v3
         with:
-          path: |
-            ~/.cache
-            node_modules
+          path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Run User Flows
