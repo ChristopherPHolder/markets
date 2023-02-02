@@ -91,6 +91,15 @@
         "proxyConfig": "apps/maritime/proxy.conf.json"
       }
     },
+    "serve-for-e2e": {
+      "executor": "@angular-devkit/architect:allOf",
+      "options": {
+        "targets": [
+          { "target": "maritime:serve" },
+          { "target": "api:serve" }
+        ]
+      }
+    },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {

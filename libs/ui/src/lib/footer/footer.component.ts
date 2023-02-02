@@ -15,6 +15,7 @@ import { environment } from "environments";
         srcset="https://mexicomarino.com/img/pblsdd/mexico_marino-11f83168.jpg"
       />
       <img
+        loading="lazy"
         class="footer-banner"
         src="https://mexicomarino.com/img/pblsdd/mexico_marino-82e99757.jpg"
         alt="Explore our services banner"
