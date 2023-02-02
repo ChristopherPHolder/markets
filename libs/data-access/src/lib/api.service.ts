@@ -10,7 +10,6 @@ import { HighlightListingsPreviews } from "./types";
 export class ApiService {
   private readonly apiEndpoint = environment.apiEndpoint;
   private highlights$?:  Observable<HighlightListingsPreviews>;
-  constructor() {}
   getHighlightListings(): Observable<HighlightListingsPreviews> {
     if (!this.highlights$) {
       this.highlights$ = this.fetchHighlights();
