@@ -8,12 +8,13 @@
       "executor": "@nrwl/cypress:cypress",
       "options": {
         "cypressConfig": "apps/maritime-e2e/cypress.config.ts",
-        "devServerTarget": "maritime:serve:development",
+        "devServerTarget": "maritime:serve-for-e2e",
+        "baseUrl": "http://localhost:4200/",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "maritime:serve:production"
+          "devServerTarget": "maritime:serve-for-e2e"
         }
       }
     },
@@ -26,5 +27,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["maritime"]
+  "implicitDependencies": ["maritime","api"]
 }
