@@ -5,16 +5,16 @@
 <h2 class="highlights-title">EMBARCACIONES</h2>
 
 <markets-highlights-listings-grid
-  [highlights]="(highlights$ | async)?.watercrafts ?? undefined"
+  [highlights]="(highlights$ | async)?.watercrafts"
   [isLCP]="true"
 />
 
 <h2 class="highlights-title">PRODUCTOS</h2>
 <markets-highlights-listings-grid
-  [highlights]="(highlights$ | async)?.products ?? undefined"
+  [highlights]="(highlights$ | async)?.products"
 />
 
 <h2 class="highlights-title">SERVICIOS</h2>
 <markets-highlights-listings-grid
-  [highlights]="(highlights$ | async)?.products ?? undefined"
+  [highlights]="(highlights$ | async)?.products"
 />
