@@ -24,7 +24,7 @@ export class HighlightsResolver implements Resolve<HighlightListingsPreviews | v
       rel: 'preload',
       as: 'fetch',
       type: 'application/json',
-      href: environment.apiEndpoint + '/',
+      href: environment.apiEndpoint,
       crossorigin: ''
     });
   }
