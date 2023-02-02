@@ -6,7 +6,7 @@ import {
 
 const interactions: UserFlowInteractionsFn = async (
   ctx: UserFlowContext
-): Promise<any> => {
+): Promise<void> => {
   const { flow, collectOptions } = ctx;
   const { url } = collectOptions;
 
