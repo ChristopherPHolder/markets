@@ -20,7 +20,6 @@ function initializeDataFactory(api: ApiService): () => Promise<void> {
     HeaderComponent
   ],
   providers: [
-    ApiService,
     {
       provide: APP_INITIALIZER,
       multi: true,
