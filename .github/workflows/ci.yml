@@ -132,9 +132,74 @@ jobs:
       - name: Lint Affected
         run: npx nx affected --target=lint --parallel=3
 
+  cypress:
+    name: Cypress
+    needs: [build, lint, test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+      # Derive appropriate SHAs for base and head for `nx affected` commands
+      - uses: nrwl/nx-set-shas@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Cache NPM Dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            ~/.cache
+            dist
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+      - name: Cypress E2E
+        run: npx nx run maritime-e2e:e2e
+
+  user-flows:
+    name: User Flow
+    needs: [build, lint, test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+      # Derive appropriate SHAs for base and head for `nx affected` commands
+      - uses: nrwl/nx-set-shas@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Cache NPM Dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            ~/.cache
+            dist
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+      - name: User Flows E2E
+        run: npx nx run maritime-user-flows:e2e
+
+      - name: Archive User Flow Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: user-flows-reports
+          path: apps/maritime-user-flows/src/measures/
+          retention-days: 5
+
   deploy:
     name: Deploy
-    needs: [build, lint, test]
+    needs: [cypress, user-flows]
     runs-on: ubuntu-latest
 
     steps:
@@ -170,39 +235,3 @@ jobs:
       - name: Deploy Prod
         if: ${{ env.is-main-branch == 'true' }}
         run: npx nx affected --target=deploy --environment=prod
-
-  user-flows:
-    name: User Flow
-    needs: [build, lint, test]
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
-          fetch-depth: 0
-      # Derive appropriate SHAs for base and head for `nx affected` commands
-      - uses: nrwl/nx-set-shas@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-
-      - name: Cache NPM Dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            ~/.cache
-            dist
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
-      - name: Run User Flows
-        run: npx nx run maritime-user-flows:e2e
-
-      - name: Archive User Flow Reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: user-flows-reports
-          path: apps/maritime-user-flows/src/measures/
-          retention-days: 5
