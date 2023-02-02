@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "start": "nx serve",
+    "start": "npm run dev",
     "build": "nx build",
     "build:prod": "npx nx run maritime:prerender --configuration=production",
     "test": "nx test",

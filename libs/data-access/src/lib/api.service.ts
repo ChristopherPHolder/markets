@@ -9,7 +9,7 @@ import { environment } from 'environments';
 
 import { HighlightListingsPreviews } from "./types";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class ApiService {
   private readonly apiEndpoint = environment.apiEndpoint;
   private highlights$?:  Observable<HighlightListingsPreviews>;
