@@ -202,11 +202,11 @@
             "forwardAllArgs": true
           },
           {
-            "command": "`[ {args.environment} == prod ]` && aws cloudfront create-invalidation --distribution-id E14PHNQ9MOMSLM --path='*' || exit 0",
+            "command": "`[ {args.environment} == prod ]` && aws cloudfront create-invalidation --distribution-id E14PHNQ9MOMSLM --paths '/*' || exit 0",
             "forwardAllArgs": true
           },
           {
-            "command": "`[ {args.environment} == dev ]` && aws cloudfront create-invalidation --distribution-id ECTDT472IS5LQ --path='*'|| exit 0",
+            "command": "`[ {args.environment} == dev ]` && aws cloudfront create-invalidation --distribution-id ECTDT472IS5LQ --paths '/*'|| exit 0",
             "forwardAllArgs": true
           }
         ]
