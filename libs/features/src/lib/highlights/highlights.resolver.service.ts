@@ -8,7 +8,6 @@ import { environment } from 'environments';
 
 @Injectable({providedIn: 'root'})
 export class HighlightsResolver implements Resolve<HighlightListingsPreviews | void> {
-  private readonly apiEndpoint = environment.apiEndpoint;
   private readonly isBrowser: boolean;
   constructor(
     @Inject(PLATFORM_ID) platformId: object,
@@ -19,13 +18,13 @@ export class HighlightsResolver implements Resolve<HighlightListingsPreviews | v
   }
   resolve(): Observable<HighlightListingsPreviews> | void {
     if (this.isBrowser) {
-      return this.apiService.getHighlightListings();
+      return this.apiService.highlights$;
     }
-    return this.linkService.addLink({
+    return  this.linkService.addLink({
       rel: 'preload',
       as: 'fetch',
       type: 'application/json',
-      href: this.apiEndpoint,
+      href: environment.apiEndpoint + '/',
       crossorigin: ''
     });
   }

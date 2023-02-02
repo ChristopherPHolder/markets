@@ -5,14 +5,16 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ApiService, HighlightListingsPreviews } from "data-access";
 import { LinkService } from "external-resource-link";
 import { HeaderComponent } from "ui";
-import { tap } from "rxjs";
+import { shareReplay, tap } from "rxjs";
 import { isPlatformBrowser } from "@angular/common";
 
 function initializeDataFactory(apiService: ApiService, linkService: LinkService): () => Promise<void> {
   const isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   return () => new Promise((resolve) => {
     if (isBrowser) {
-      apiService.getHighlightListings().pipe(tap((listings: HighlightListingsPreviews) => {
+      apiService.highlights$.pipe(
+        shareReplay(),
+        tap((listings: HighlightListingsPreviews) => {
         performance.mark('Prefetching LCP Images');
         for (let i = 0; i < 2; i++) {
           linkService.addLink({

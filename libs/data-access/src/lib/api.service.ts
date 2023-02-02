@@ -8,20 +8,10 @@ import { HighlightListingsPreviews } from "./types";
 
 @Injectable({providedIn: 'root'})
 export class ApiService {
-  private readonly apiEndpoint = environment.apiEndpoint;
-  private highlights$?:  Observable<HighlightListingsPreviews>;
-  getHighlightListings(): Observable<HighlightListingsPreviews> {
-    if (!this.highlights$) {
-      this.highlights$ = this.fetchHighlights();
-    }
-    return  this.highlights$;
-  }
-  private fetchHighlights(): Observable<HighlightListingsPreviews> {
-    return fromFetch<HighlightListingsPreviews>(this.apiEndpoint, {
+  public highlights$ = this._fetch<HighlightListingsPreviews>('');
+  private _fetch<T>(path: string): Observable<T> {
+    return fromFetch<T>(environment.apiEndpoint + '/' + path, {
       selector: response => response.json()
-    }).pipe(
-      shareReplay(),
-      map(response => response),
-    );
+    }).pipe(shareReplay(), map(response => response));
   }
 }
