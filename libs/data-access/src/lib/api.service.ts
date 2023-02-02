@@ -1,7 +1,7 @@
 import { PLATFORM_ID, Injectable, Inject } from "@angular/core";
 import { isPlatformBrowser } from '@angular/common';
 
-import { map, Observable, of, shareReplay, tap } from 'rxjs';
+import { map, Observable, of, shareReplay } from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
 
 import { LinkService } from 'external-resource-link';
@@ -21,23 +21,6 @@ export class ApiService {
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
-
-  addPreloadLCPLinks():void {
-    this.getHighlightListings().pipe(tap((listings) => {
-      if (!listings) {
-        return;
-      }
-      for (let i = 0; i < 2; i++) {
-        this.linkService.addLink({
-          rel: 'preload',
-          as: 'image',
-          href: listings["watercrafts"][i].thumbnailUrl,
-          fetchpriority: 'high'
-        });
-      }
-    })).subscribe();
-  }
-
   getHighlightListings(): Observable<HighlightListingsPreviews | null> {
     if (!this.isBrowser) {
       this.addPreloadFetchLink();
