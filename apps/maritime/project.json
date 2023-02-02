@@ -35,7 +35,7 @@
             {
               "type": "bundle",
               "name": "main",
-              "maximumWarning": "225kb",
+              "maximumWarning": "224kb",
               "maximumError": "230kb"
             },
             {
@@ -43,6 +43,12 @@
               "name": "styles",
               "maximumWarning": "154b",
               "maximumError": "155b"
+            },
+            {
+              "type": "bundle",
+              "name": "runtime",
+              "maximumWarning": "3kB",
+              "maximumError": "5kB"
             },
             {
               "type": "bundle",
