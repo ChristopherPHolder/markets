@@ -16,9 +16,8 @@ import { AsyncPipe } from "@angular/common";
   ]
 })
 export class HighlightsComponent {
-  public readonly highlights$?: Observable<HighlightListingsPreviews | null>;
+  public readonly highlights$: Observable<HighlightListingsPreviews>;
   constructor(private activatedRoute: ActivatedRoute) {
-    this.highlights$ = this.activatedRoute.data
-      .pipe(map(data => data['highlights$']));
+    this.highlights$ = this.activatedRoute.data.pipe(map(({highlights$}) => highlights$))
   }
 }
