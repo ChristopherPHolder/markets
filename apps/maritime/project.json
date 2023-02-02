@@ -183,8 +183,26 @@
       "dependsOn": ["prerender"],
       "options": {
         "commands": [
-          "echo 'Deploying to {args.environment} environment'",
-          "aws s3 sync ./dist/apps/maritime/browser s3://marketsapp{args.environment} --delete"
+          {
+            "command": "`[ {args.environment} != dev ]` && `[ {args.environment} != prod ]` && exit 1 || exit 0",
+            "forwardAllArgs": true
+          },
+          {
+            "command": "echo 'Deploying to {args.environment} environment'",
+            "forwardAllArgs": true
+          },
+          {
+            "command": "aws s3 sync ./dist/apps/maritime/browser s3://marketsapp{args.environment} --delete",
+            "forwardAllArgs": true
+          },
+          {
+            "command": "`[ {args.environment} == prod ]` && aws cloudfront create-invalidation --distribution-id E14PHNQ9MOMSLM --path='*' || exit 0",
+            "forwardAllArgs": true
+          },
+          {
+            "command": "`[ {args.environment} == dev ]` && aws cloudfront create-invalidation --distribution-id ECTDT472IS5LQ --path='*'|| exit 0",
+            "forwardAllArgs": true
+          }
         ]
       }
     }
