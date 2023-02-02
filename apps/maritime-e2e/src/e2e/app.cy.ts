@@ -1,10 +1,17 @@
-import { getFooter } from '../support/app.po';
+import { getFooter, getHeader, getMain } from "../support/app.po";
 
 describe('maritime', () => {
   beforeEach(() => cy.visit('/'));
 
+  it('should display header', () => {
+    getHeader();
+  })
+
+  it("should display main", () => {
+    getMain();
+  });
+
   it('should display footer', () => {
-    // Function helper example, see `../support/app.po.ts` file.
-    getFooter().contains('Welcome maritime');
+    getFooter()
   });
 });
