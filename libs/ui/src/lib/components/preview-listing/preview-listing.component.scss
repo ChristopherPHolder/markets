@@ -1,6 +1,6 @@
 .preview-listing {
   margin: auto;
-  height: 345px;
+  height: fit-content;
   width: 15vw;
   @media (max-width: 1800px) {
     width: 18vw;
@@ -13,7 +13,6 @@
   }
   @media (max-width: 600px) {
     width: 47vw;
-    height: 360px;
   }
   padding: 5px;
   border-radius: 8px;
@@ -37,15 +36,19 @@
   background-position: center;
   @media (max-width: 1800px) {
     width: 18vw;
+    height: 18vw;
   }
   @media (max-width: 1400px) {
     width: 23vw;
+    height: 23vw;
   }
   @media (max-width: 900px) {
     width: 31vw;
+    height: 31vw;
   }
   @media (max-width: 600px) {
     width: 47vw;
+    height: 47vw;
   }
 }
 
@@ -59,7 +62,6 @@
 
 .preview-listing-price {
   padding-bottom: 5px;
-  font-size: large;
   font-weight:900;
 }
 

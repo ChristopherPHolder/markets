@@ -5,21 +5,23 @@
   font-weight: 500;
   font-style: italic;
   text-align: center;
-  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
   max-width: 1140px;
   @media (max-width: 900px) {
     font-size: 30px;
+    padding-bottom: 0;
   }
   @media (max-width: 600px) {
     font-size: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
   }
 }
 
 .highlights-title {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-size: 24px;
   font-weight: 500;
   text-align: center;
