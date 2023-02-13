@@ -230,7 +230,7 @@ jobs:
 
       - name: Deploy Dev
         if: ${{ env.is-pull-request == 'true' }}
-        run: npx nx affected --target=deploy --environment=prod
+        run: npx nx affected --target=deploy --environment=dev
 
       - name: Deploy Prod
         if: ${{ env.is-main-branch == 'true' }}
