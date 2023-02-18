@@ -4,7 +4,7 @@ import {
   Input,
   ViewEncapsulation
 } from "@angular/core";
-import { NgIf } from "@angular/common";
+import { NgIf, NgOptimizedImage } from "@angular/common";
 import { ListingPreview } from "data-access";
 
 type LoadingStrategy = 'lazy' | 'eager';
@@ -12,18 +12,16 @@ type LoadingStrategy = 'lazy' | 'eager';
 @Component({
   selector: 'markets-preview-listing',
   standalone: true,
-  imports: [
-    NgIf
-  ],
+  imports: [NgIf, NgOptimizedImage],
   template: `
     <ng-container *ngIf="listingPreview as listing">
       <article class="preview-listing">
         <div class="preview-listing-img-box">
           <img
-            [src]="listing.thumbnailUrl"
-            class="preview-listing-img"
-            [attr.fetchpriority]="loading === 'eager' ? 'high' : 'low'"
-            [attr.loading]="loading"
+            [ngSrc]="listing.thumbnailUrl"
+            height="250"
+            width="250"
+            priority
           >
         </div>
         <ul class="preview-listing-details">
