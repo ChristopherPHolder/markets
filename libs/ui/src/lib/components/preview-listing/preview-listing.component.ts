@@ -7,22 +7,22 @@ import {
 import { NgIf } from "@angular/common";
 import { ListingPreview } from "data-access";
 
-type LoadingStrategy = 'lazy' | 'eager';
+type LoadingStrategy = "lazy" | "eager";
 
 @Component({
-  selector: 'markets-preview-listing',
+  selector: "markets-preview-listing",
   standalone: true,
   imports: [NgIf],
   template: `
-    <ng-container *ngIf="listingPreview as listing">
+    <ng-container *ngIf="listingPreview as listing; else loading">
       <article class="preview-listing">
         <div class="preview-listing-img-box">
           <img
-            [attr.loading]="loading"
+            [attr.loading]="loadingStrategy"
             [src]="listing.thumbnailUrl"
             class="preview-listing-img"
-            [attr.fetchpriority]="loading === 'eager' ? 'high' : 'low'"
-            [attr.decoding]="loading === 'eager' ? 'sync' : 'async'"
+            [attr.fetchpriority]="loadingStrategy === 'eager' ? 'high' : 'low'"
+            [attr.decoding]="loadingStrategy === 'eager' ? 'sync' : 'async'"
           >
         </div>
         <ul class="preview-listing-details">
@@ -35,12 +35,30 @@ type LoadingStrategy = 'lazy' | 'eager';
         </ul>
       </article>
     </ng-container>
+    <ng-template #loading>
+      <article class="preview-listing">
+        <div class="preview-listing-img-box">
+          <img
+            loading="lazy"
+            fetchpriority="low"
+            decoding="async"
+            class="preview-listing-img"
+            src="/assets/image-placeholder.svg"
+          >
+        </div>
+        <ul class="preview-listing-details ghost-hl-listing-details">
+          <li></li>
+          <li></li>
+          <li class="preview-listing-detail-desc"></li>
+        </ul>
+      </article>
+    </ng-template>
   `,
-  styleUrls: ['./preview-listing.component.scss'],
+  styleUrls: ["./preview-listing.component.scss"],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PreviewListingComponent {
-  @Input() listingPreview!: ListingPreview;
-  @Input() loading!: LoadingStrategy;
+  @Input() listingPreview?: ListingPreview;
+  @Input() loadingStrategy?: LoadingStrategy;
 }

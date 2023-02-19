@@ -31,9 +31,6 @@
   border-radius: 8px;
   height: 220px;
   width: 15vw;
-  background-image: url(https://mexicomarino.com/img/icons/icon-picture.svg);
-  background-size: cover;
-  background-position: center;
   @media (max-width: 1800px) {
     width: 18vw;
     height: 18vw;
@@ -67,4 +64,29 @@
 
 .preview-listing-detail-desc {
   min-height: 60px;
+}
+
+.ghost-hl-listing-details li {
+  margin-left: 0 !important;
+  color: rgba(0, 0, 0, 0) !important;
+  height: 20px;
+  border-radius: 5px;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+  background: #779cc2 linear-gradient(90deg,
+    rgba(#FFD200, 0) 0,
+    rgba(#ffd00044, 0.2) 20%,
+    rgba(#FFD200, 0.5) 60%,
+    rgba(#FFD200, 0)
+  );
+}
+@keyframes placeholderShimmer{
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
 }
