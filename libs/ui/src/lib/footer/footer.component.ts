@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
-import { environment } from "environments";
 
 @Component({
   selector: 'markets-footer',
@@ -16,6 +15,8 @@ import { environment } from "environments";
       />
       <img
         loading="lazy"
+        fetchPriority="low"
+        decoding="async"
         class="footer-banner"
         src="https://mexicomarino.com/img/pblsdd/mexico_marino-82e99757.jpg"
         alt="Explore our services banner"
@@ -28,9 +29,11 @@ import { environment } from "environments";
     <a>
       <img
         loading="lazy"
+        fetchPriority="low"
+        decoding="async"
         class="footer-logo"
         alt="footer navigation logo"
-        [src]="footerLogoSrc"
+        src="https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/logo-redondo-amarillo.svg"
       >
     </a>
     <menu class="footer-buscador-menu">
@@ -58,6 +61,4 @@ import { environment } from "environments";
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent {
-  readonly footerLogoSrc = environment.footerLogoSrc;
-}
+export class FooterComponent {}

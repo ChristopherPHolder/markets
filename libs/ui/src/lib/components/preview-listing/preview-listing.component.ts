@@ -18,10 +18,11 @@ type LoadingStrategy = 'lazy' | 'eager';
       <article class="preview-listing">
         <div class="preview-listing-img-box">
           <img
+            [attr.loading]="loading"
             [src]="listing.thumbnailUrl"
             class="preview-listing-img"
             [attr.fetchpriority]="loading === 'eager' ? 'high' : 'low'"
-            [attr.loading]="loading"
+            [attr.decoding]="loading === 'eager' ? 'sync' : 'async'"
           >
         </div>
         <ul class="preview-listing-details">
