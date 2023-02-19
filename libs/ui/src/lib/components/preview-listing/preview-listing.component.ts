@@ -12,9 +12,7 @@ type LoadingStrategy = 'lazy' | 'eager';
 @Component({
   selector: 'markets-preview-listing',
   standalone: true,
-  imports: [
-    NgIf
-  ],
+  imports: [NgIf],
   template: `
     <ng-container *ngIf="listingPreview as listing">
       <article class="preview-listing">
