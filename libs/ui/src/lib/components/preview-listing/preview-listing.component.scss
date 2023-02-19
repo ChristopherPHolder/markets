@@ -31,6 +31,9 @@
   border-radius: 8px;
   height: 220px;
   width: 15vw;
+  background-image: url(/assets/image-placeholder.svg);
+  background-size: cover;
+  background-position: center;
   @media (max-width: 1800px) {
     width: 18vw;
     height: 18vw;
