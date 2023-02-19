@@ -1,11 +1,6 @@
-import {
-  ChangeDetectionStrategy,
-  Component, Input,
-  ViewEncapsulation
-} from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from "@angular/core";
 import { NgForOf, NgIf } from "@angular/common";
 import { PreviewListingComponent } from "../../components/preview-listing/preview-listing.component";
-import { PreviewListingGhostComponent } from "../../components/preview-listing-ghost/preview-listing-ghost.component";
 
 import { ListingPreview } from "data-access";
 
@@ -14,7 +9,6 @@ import { ListingPreview } from "data-access";
   standalone: true,
   imports: [
     PreviewListingComponent,
-    PreviewListingGhostComponent,
     NgIf,
     NgForOf
   ],
@@ -23,14 +17,14 @@ import { ListingPreview } from "data-access";
       <ng-container *ngFor="let listing of listings; let i = index">
         <markets-preview-listing
           [listingPreview]="listing"
-          [loading]="(i < 2 && isLCP) ? 'eager' : 'lazy'"
+          [loadingStrategy]="(i < 2 && isLCP) ? 'eager' : 'lazy'"
         />
       </ng-container>
     </ng-container>
 
     <ng-template #loading>
       <ng-container *ngFor="let _ of [].constructor(12)">
-        <markets-preview-listing-ghost/>
+        <markets-preview-listing/>
       </ng-container>
     </ng-template>
   `,
