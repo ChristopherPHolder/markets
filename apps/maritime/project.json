@@ -188,6 +188,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["prerender"],
       "options": {
+        "parallel": false,
         "commands": [
           {
             "command": "`[ {args.environment} != dev ]` && `[ {args.environment} != prod ]` && exit 1 || exit 0",
