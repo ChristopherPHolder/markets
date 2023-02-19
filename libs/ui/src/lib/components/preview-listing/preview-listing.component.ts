@@ -7,10 +7,10 @@ import {
 import { NgIf } from "@angular/common";
 import { ListingPreview } from "data-access";
 
-type LoadingStrategy = 'lazy' | 'eager';
+type LoadingStrategy = "lazy" | "eager";
 
 @Component({
-  selector: 'markets-preview-listing',
+  selector: "markets-preview-listing",
   standalone: true,
   imports: [NgIf],
   template: `
@@ -38,13 +38,13 @@ type LoadingStrategy = 'lazy' | 'eager';
     <ng-template #loading>
       <article class="preview-listing">
         <div class="preview-listing-img-box">
-        <img
-          loading="lazy"
-          fetchpriority="low"
-          decoding="async"
-          class="preview-listing-img"
-          src="https://mexicomarino.com/img/icons/icon-picture.svg"
-        >
+          <img
+            loading="lazy"
+            fetchpriority="low"
+            decoding="async"
+            class="preview-listing-img"
+            src="/assets/image-placeholder.svg"
+          >
         </div>
         <ul class="preview-listing-details ghost-hl-listing-details">
           <li></li>
@@ -54,9 +54,9 @@ type LoadingStrategy = 'lazy' | 'eager';
       </article>
     </ng-template>
   `,
-  styleUrls: ['./preview-listing.component.scss'],
+  styleUrls: ["./preview-listing.component.scss"],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PreviewListingComponent {
   @Input() listingPreview?: ListingPreview;

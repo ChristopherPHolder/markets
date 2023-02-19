@@ -26,36 +26,50 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/
 
     </div>
     <nav class="footer-nav">
-    <a>
-      <img
-        loading="lazy"
-        fetchPriority="low"
-        decoding="async"
-        class="footer-logo"
-        alt="footer navigation logo"
-        src="https://mexico-marino-deep-blue-eu-central-1.s3.eu-central-1.amazonaws.com/logo-redondo-amarillo.svg"
-      >
-    </a>
-    <menu class="footer-buscador-menu">
-      <li class="footer-menu-category">Buscador</li>
-      <a><li>Lanchas</li></a>
-      <a><li>Veleros</li></a>
-      <a><li>Motos</li></a>
-      <a><li>Yates</li></a>
-    </menu>
-    <menu class="footer-menu-menu">
-      <li class="footer-menu-category">Menu</li>
-      <a><li>Distribuidores</li></a>
-      <a><li>Servicios</li></a>
-      <a><li>Clima</li></a>
-    </menu>
-    <menu class="footer-contacto-menu">
-      <li class="footer-menu-category">Contacto</li>
-    </menu>
-  </nav>
-  <div class='footer-reserve'>
-    <div>® 2022 Mexico Marino</div>
-  </div>
+      <a>
+        <img
+          loading="lazy"
+          fetchPriority="low"
+          decoding="async"
+          class="footer-logo"
+          alt="footer navigation logo"
+          src="/assets/footer-menu-logo.svg"
+        >
+      </a>
+      <menu class="footer-buscador-menu">
+        <li class="footer-menu-category">Buscador</li>
+        <a>
+          <li>Lanchas</li>
+        </a>
+        <a>
+          <li>Veleros</li>
+        </a>
+        <a>
+          <li>Motos</li>
+        </a>
+        <a>
+          <li>Yates</li>
+        </a>
+      </menu>
+      <menu class="footer-menu-menu">
+        <li class="footer-menu-category">Menu</li>
+        <a>
+          <li>Distribuidores</li>
+        </a>
+        <a>
+          <li>Servicios</li>
+        </a>
+        <a>
+          <li>Clima</li>
+        </a>
+      </menu>
+      <menu class="footer-contacto-menu">
+        <li class="footer-menu-category">Contacto</li>
+      </menu>
+    </nav>
+    <div class="footer-reserve">
+      <div>® 2022 Mexico Marino</div>
+    </div>
   `,
   styleUrls: ['./footer.component.scss'],
   encapsulation: ViewEncapsulation.None,
